@@ -1,0 +1,28 @@
+name: Review personas
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+# One review per PR at a time; a newer push cancels the older run (0001 D7).
+concurrency:
+  group: review-personas-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    # Scenario PRs only (RUN-3): never forks, drafts, or maintenance PRs.
+    if: >-
+      startsWith(github.head_ref, 'scenario/')
+      && github.event.pull_request.head.repo.full_name == github.repository
+      && !github.event.pull_request.draft
+    permissions:
+      contents: read
+      pull-requests: write
+      id-token: write
+    # Set by `scripts/scenario.py pin` (design T4). Do not edit by hand.
+    # pinned: none
+    uses: sre-ai-tools/review-personas/.github/workflows/review.yml@main
+    with:
+      aws-role-arn: ${{ vars.TESTBED_AWS_ROLE_ARN }}
+      aws-region: ${{ vars.TESTBED_AWS_REGION || 'us-east-1' }}

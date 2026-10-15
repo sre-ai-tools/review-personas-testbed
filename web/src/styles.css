@@ -1,0 +1,72 @@
+:root {
+  --text: #1b1f24;
+  --muted: #57606a;
+  --accent: #0b5cad;
+  --ok: #116329;
+  --busy: #9a3412;
+  --surface: #ffffff;
+  --border: #d0d7de;
+  font-family: system-ui, sans-serif;
+  color: var(--text);
+  background: var(--surface);
+}
+
+.site-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(16rem, 1fr) 2fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+@media (max-width: 40rem) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item-button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.item-button[aria-current="true"] {
+  border-color: var(--accent);
+}
+
+.item-button:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.badge-ok {
+  color: var(--ok);
+}
+
+.badge-busy {
+  color: var(--busy);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
