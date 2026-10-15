@@ -76,10 +76,10 @@ index 0000000..6280a1d
 +  tags = { Name = "shelf-bastion-${var.environment}" }
 +}
 diff --git a/infra/variables.tf b/infra/variables.tf
-index 034a4f4..5406dab 100644
+index f56f120..22bace4 100644
 --- a/infra/variables.tf
 +++ b/infra/variables.tf
-@@ -33,3 +33,8 @@ variable "jwt_audience" {
+@@ -44,3 +44,8 @@ variable "jwt_audience" {
    type    = list(string)
    default = ["shelf"]
  }

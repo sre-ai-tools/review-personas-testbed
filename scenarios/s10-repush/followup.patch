@@ -17,10 +17,10 @@ index 6280a1d..73f5b04 100644
  
    egress {
 diff --git a/infra/variables.tf b/infra/variables.tf
-index 5406dab..d108d24 100644
+index 22bace4..4100dff 100644
 --- a/infra/variables.tf
 +++ b/infra/variables.tf
-@@ -38,3 +38,8 @@ variable "bastion_key_name" {
+@@ -49,3 +49,8 @@ variable "bastion_key_name" {
    description = "EC2 key pair for the bastion host"
    type        = string
  }

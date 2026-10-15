@@ -1,8 +1,8 @@
 diff --git a/web/src/components/BorrowForm.tsx b/web/src/components/BorrowForm.tsx
-index e3bdddb..a241130 100644
+index 795ea3a..390cd1e 100644
 --- a/web/src/components/BorrowForm.tsx
 +++ b/web/src/components/BorrowForm.tsx
-@@ -27,20 +27,26 @@ export function BorrowForm({ itemId, onBorrowed }: Props) {
+@@ -31,20 +31,26 @@ export function BorrowForm({ itemId, onBorrowed }: Props) {
  
    return (
      <form onSubmit={submit} className="borrow-form">
