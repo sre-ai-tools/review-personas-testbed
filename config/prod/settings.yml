@@ -1,0 +1,6 @@
+# FAKE production settings for the review-personas testbed (scenario S7). Not real.
+sso:
+  issuer: https://sso.example.com
+  client_secret: FAKE-not-a-real-client-secret
+alerts:
+  pager_webhook: https://example.com/FAKE-not-a-real-webhook
