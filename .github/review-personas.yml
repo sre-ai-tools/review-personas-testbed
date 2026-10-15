@@ -4,5 +4,8 @@
 exclude_sensitive: ["config/prod/*"]
 
 personas:
+  aws-architect:
+    enabled: false
   dba:
+    model: global.anthropic.claude-sonnet-5-5
     extra_focus: "We run Postgres 16 on RDS and loans holds millions of rows. Flag migrations that take ACCESS EXCLUSIVE locks or rewrite large tables."
