@@ -1,0 +1,4 @@
+# Scenario PR, opened by scripts/scenario.py.
+title: Local env file and prod settings
+body: |
+  Adds a local `.env` for the API and the production settings file, and bumps the API version.

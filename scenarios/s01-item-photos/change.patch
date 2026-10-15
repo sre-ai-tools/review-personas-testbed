@@ -1,0 +1,387 @@
+diff --git a/api/app/models.py b/api/app/models.py
+index ce05893..4b1b36f 100644
+--- a/api/app/models.py
++++ b/api/app/models.py
+@@ -18,6 +18,7 @@ class Item(BaseModel):
+     owner_email: str
+     available: bool
+     created_at: datetime
++    photo_url: str | None = None
+ 
+ 
+ class LoanCreate(BaseModel):
+@@ -33,3 +34,14 @@ class Loan(BaseModel):
+     due_at: datetime
+     returned_at: datetime | None
+     late_fee_cents: int | None
++
++
++class PhotoUploadRequest(BaseModel):
++    content_type: Literal["image/jpeg", "image/png", "image/webp"]
++
++
++class PhotoUpload(BaseModel):
++    """A presigned S3 POST: the browser sends `fields` plus the file to `url`."""
++
++    url: str
++    fields: dict[str, str]
+diff --git a/api/app/photos.py b/api/app/photos.py
+new file mode 100644
+index 0000000..4e96c40
+--- /dev/null
++++ b/api/app/photos.py
+@@ -0,0 +1,41 @@
++"""Item photos in S3. Browsers upload and download directly using short-lived presigned URLs."""
++
++import os
++from functools import lru_cache
++
++import boto3
++
++URL_TTL_SECONDS = 300
++MAX_PHOTO_BYTES = 5 * 1024 * 1024
++EXTENSIONS = {"image/jpeg": "jpg", "image/png": "png", "image/webp": "webp"}
++
++
++@lru_cache(maxsize=1)
++def _s3():
++    return boto3.client("s3")
++
++
++def photo_key(item_id: int, content_type: str) -> str:
++    return f"items/{item_id}/photo.{EXTENSIONS[content_type]}"
++
++
++def upload(key: str, content_type: str) -> dict:
++    # A presigned POST (unlike PUT) lets S3 enforce the size and type limits.
++    return _s3().generate_presigned_post(
++        Bucket=os.environ["PHOTOS_BUCKET"],
++        Key=key,
++        Fields={"Content-Type": content_type},
++        Conditions=[
++            {"Content-Type": content_type},
++            ["content-length-range", 1, MAX_PHOTO_BYTES],
++        ],
++        ExpiresIn=URL_TTL_SECONDS,
++    )
++
++
++def download_url(key: str) -> str:
++    return _s3().generate_presigned_url(
++        "get_object",
++        Params={"Bucket": os.environ["PHOTOS_BUCKET"], "Key": key},
++        ExpiresIn=URL_TTL_SECONDS,
++    )
+diff --git a/api/app/routes/items.py b/api/app/routes/items.py
+index c11243e..3d6813c 100644
+--- a/api/app/routes/items.py
++++ b/api/app/routes/items.py
+@@ -2,14 +2,14 @@ from typing import Annotated
+ 
+ from fastapi import APIRouter, Depends, HTTPException, Query
+ 
+-from .. import db
++from .. import db, photos
+ from ..auth import current_email
+-from ..models import Item, ItemCreate
++from ..models import Item, ItemCreate, PhotoUpload, PhotoUploadRequest
+ 
+ router = APIRouter(prefix="/items", tags=["items"])
+ 
+ _SELECT = """
+-    SELECT i.id, i.title, i.kind, i.owner_email, i.created_at,
++    SELECT i.id, i.title, i.kind, i.owner_email, i.created_at, i.photo_key,
+            NOT EXISTS (
+                SELECT 1 FROM loans l WHERE l.item_id = i.id AND l.returned_at IS NULL
+            ) AS available
+@@ -17,13 +17,19 @@ _SELECT = """
+ """
+ 
+ 
++def _with_photo(row: dict) -> dict:
++    key = row.pop("photo_key", None)
++    return {**row, "photo_url": photos.download_url(key) if key else None}
++
++
+ @router.get("", response_model=list[Item])
+ def list_items(
+     _: Annotated[str, Depends(current_email)],
+     limit: Annotated[int, Query(ge=1, le=100)] = 50,
+     offset: Annotated[int, Query(ge=0)] = 0,
+ ) -> list[dict]:
+-    return db.fetch_all(_SELECT + " ORDER BY i.id LIMIT %s OFFSET %s", (limit, offset))
++    rows = db.fetch_all(_SELECT + " ORDER BY i.id LIMIT %s OFFSET %s", (limit, offset))
++    return [_with_photo(row) for row in rows]
+ 
+ 
+ @router.get("/{item_id}", response_model=Item)
+@@ -31,7 +37,7 @@ def get_item(item_id: int, _: Annotated[str, Depends(current_email)]) -> dict:
+     item = db.fetch_one(_SELECT + " WHERE i.id = %s", (item_id,))
+     if item is None:
+         raise HTTPException(status_code=404, detail="Item not found")
+-    return item
++    return _with_photo(item)
+ 
+ 
+ @router.post("", response_model=Item, status_code=201)
+@@ -43,3 +49,19 @@ def create_item(body: ItemCreate, email: Annotated[str, Depends(current_email)])
+             (body.title, body.kind, email),
+         )
+         return cur.fetchone()
++
++
++@router.post("/{item_id}/photo", response_model=PhotoUpload)
++def request_photo_upload(
++    item_id: int, body: PhotoUploadRequest, email: Annotated[str, Depends(current_email)]
++) -> dict:
++    key = photos.photo_key(item_id, body.content_type)
++    with db.transaction() as cur:
++        cur.execute("SELECT owner_email FROM items WHERE id = %s FOR UPDATE", (item_id,))
++        item = cur.fetchone()
++        if item is None:
++            raise HTTPException(status_code=404, detail="Item not found")
++        if item["owner_email"] != email:
++            raise HTTPException(status_code=403, detail="Only the owner can change the photo")
++        cur.execute("UPDATE items SET photo_key = %s WHERE id = %s", (key, item_id))
++    return photos.upload(key, body.content_type)
+diff --git a/db/migrations/004_item_photos.sql b/db/migrations/004_item_photos.sql
+new file mode 100644
+index 0000000..26e74f3
+--- /dev/null
++++ b/db/migrations/004_item_photos.sql
+@@ -0,0 +1,8 @@
++-- migrate:up
++-- A nullable column with no default only changes the catalog, so the lock is brief.
++-- Fail fast instead of queueing behind a long transaction.
++SET lock_timeout = '5s';
++ALTER TABLE items ADD COLUMN photo_key text;
++
++-- migrate:down
++ALTER TABLE items DROP COLUMN photo_key;
+diff --git a/infra/api.tf b/infra/api.tf
+index 03e64e4..a978622 100644
+--- a/infra/api.tf
++++ b/infra/api.tf
+@@ -24,6 +24,12 @@ data "aws_iam_policy_document" "api" {
+     actions   = ["secretsmanager:GetSecretValue"]
+     resources = [aws_db_instance.main.master_user_secret[0].secret_arn]
+   }
++
++  statement {
++    sid       = "ItemPhotos"
++    actions   = ["s3:PutObject", "s3:GetObject"]
++    resources = ["${aws_s3_bucket.photos.arn}/items/*"]
++  }
+ }
+ 
+ resource "aws_iam_role_policy" "api" {
+@@ -58,6 +64,7 @@ resource "aws_lambda_function" "api" {
+       DB_HOST       = aws_db_instance.main.address
+       DB_NAME       = aws_db_instance.main.db_name
+       DB_SECRET_ARN = aws_db_instance.main.master_user_secret[0].secret_arn
++      PHOTOS_BUCKET = aws_s3_bucket.photos.id
+     }
+   }
+ 
+diff --git a/infra/photos.tf b/infra/photos.tf
+new file mode 100644
+index 0000000..0a2d004
+--- /dev/null
++++ b/infra/photos.tf
+@@ -0,0 +1,51 @@
++# Item photos. Browsers upload and download them directly with short-lived presigned URLs from the API.
++resource "aws_s3_bucket" "photos" {
++  bucket = "shelf-photos-${var.environment}"
++}
++
++resource "aws_s3_bucket_public_access_block" "photos" {
++  bucket                  = aws_s3_bucket.photos.id
++  block_public_acls       = true
++  block_public_policy     = true
++  ignore_public_acls      = true
++  restrict_public_buckets = true
++}
++
++resource "aws_s3_bucket_server_side_encryption_configuration" "photos" {
++  bucket = aws_s3_bucket.photos.id
++  rule {
++    apply_server_side_encryption_by_default {
++      sse_algorithm = "AES256"
++    }
++  }
++}
++
++resource "aws_s3_bucket_cors_configuration" "photos" {
++  bucket = aws_s3_bucket.photos.id
++  cors_rule {
++    allowed_methods = ["GET", "POST"]
++    allowed_origins = ["https://${aws_cloudfront_distribution.web.domain_name}"]
++    allowed_headers = ["*"]
++    max_age_seconds = 3000
++  }
++}
++
++resource "aws_s3_bucket_lifecycle_configuration" "photos" {
++  bucket = aws_s3_bucket.photos.id
++  rule {
++    id     = "abort-incomplete-uploads"
++    status = "Enabled"
++    filter {}
++    abort_incomplete_multipart_upload {
++      days_after_initiation = 1
++    }
++  }
++}
++
++# The Lambda signs URLs locally, but reads object metadata through this endpoint, not the internet.
++resource "aws_vpc_endpoint" "s3" {
++  vpc_id            = aws_vpc.main.id
++  service_name      = "com.amazonaws.${var.region}.s3"
++  vpc_endpoint_type = "Gateway"
++  route_table_ids   = [aws_vpc.main.main_route_table_id]
++}
+diff --git a/web/src/api.ts b/web/src/api.ts
+index 87a3a72..a302553 100644
+--- a/web/src/api.ts
++++ b/web/src/api.ts
+@@ -10,6 +10,14 @@ export interface Item {
+   owner_email: string;
+   available: boolean;
+   created_at: string;
++  photo_url: string | null;
++}
++
++export type PhotoType = "image/jpeg" | "image/png" | "image/webp";
++
++export interface PhotoUpload {
++  url: string;
++  fields: Record<string, string>;
+ }
+ 
+ export interface Loan {
+@@ -57,4 +65,18 @@ export const api = {
+     request<Loan>("/loans", { method: "POST", body: JSON.stringify({ item_id: itemId, days }) }),
+   returnItem: (loanId: number) => request<Loan>(`/loans/${loanId}/return`, { method: "POST" }),
+   overdue: () => request<Loan[]>("/loans/overdue"),
++  requestPhotoUpload: (itemId: number, contentType: PhotoType) =>
++    request<PhotoUpload>(`/items/${itemId}/photo`, {
++      method: "POST",
++      body: JSON.stringify({ content_type: contentType }),
++    }),
+ };
++
++// Sends the file straight to S3 with the presigned POST from the API.
++export async function uploadPhoto(upload: PhotoUpload, file: File): Promise<void> {
++  const form = new FormData();
++  Object.entries(upload.fields).forEach(([key, value]) => form.append(key, value));
++  form.append("file", file);
++  const res = await fetch(upload.url, { method: "POST", body: form });
++  if (!res.ok) throw new ApiError(res.status, "Upload failed");
++}
+diff --git a/web/src/components/ItemDetail.tsx b/web/src/components/ItemDetail.tsx
+index fbaa784..435c3f7 100644
+--- a/web/src/components/ItemDetail.tsx
++++ b/web/src/components/ItemDetail.tsx
+@@ -1,6 +1,7 @@
+ import { useEffect, useState } from "react";
+ import { api, type Item } from "../api";
+ import { BorrowForm } from "./BorrowForm";
++import { PhotoUploader } from "./PhotoUploader";
+ 
+ export function ItemDetail({ itemId }: { itemId: number }) {
+   const [item, setItem] = useState<Item | null>(null);
+@@ -16,6 +17,9 @@ export function ItemDetail({ itemId }: { itemId: number }) {
+   return (
+     <section aria-labelledby="item-title" className="item-detail">
+       <h2 id="item-title">{item.title}</h2>
++      {item.photo_url && (
++        <img className="item-photo" src={item.photo_url} alt={`Photo of ${item.title}`} />
++      )}
+       <dl>
+         <dt>Type</dt>
+         <dd>{item.kind === "book" ? "Book" : "Equipment"}</dd>
+@@ -27,6 +31,7 @@ export function ItemDetail({ itemId }: { itemId: number }) {
+       ) : (
+         <p>This item is on loan.</p>
+       )}
++      <PhotoUploader itemId={item.id} onUploaded={() => api.getItem(itemId).then(setItem)} />
+     </section>
+   );
+ }
+diff --git a/web/src/components/PhotoUploader.tsx b/web/src/components/PhotoUploader.tsx
+new file mode 100644
+index 0000000..a5b371d
+--- /dev/null
++++ b/web/src/components/PhotoUploader.tsx
+@@ -0,0 +1,57 @@
++import { useState, type FormEvent } from "react";
++import { api, uploadPhoto, type PhotoType } from "../api";
++
++const ACCEPTED: PhotoType[] = ["image/jpeg", "image/png", "image/webp"];
++const MAX_BYTES = 5 * 1024 * 1024;
++
++interface Props {
++  itemId: number;
++  onUploaded: () => void;
++}
++
++export function PhotoUploader({ itemId, onUploaded }: Props) {
++  const [file, setFile] = useState<File | null>(null);
++  const [status, setStatus] = useState<string | null>(null);
++  const [busy, setBusy] = useState(false);
++
++  async function submit(event: FormEvent) {
++    event.preventDefault();
++    if (!file) return;
++    if (!ACCEPTED.includes(file.type as PhotoType)) {
++      setStatus("Choose a JPEG, PNG or WebP image.");
++      return;
++    }
++    if (file.size > MAX_BYTES) {
++      setStatus("Photos can be up to 5 MB.");
++      return;
++    }
++    setBusy(true);
++    setStatus("Uploading…");
++    try {
++      const upload = await api.requestPhotoUpload(itemId, file.type as PhotoType);
++      await uploadPhoto(upload, file);
++      setStatus("Photo updated.");
++      onUploaded();
++    } catch (e) {
++      setStatus(`Upload failed: ${(e as Error).message}`);
++    } finally {
++      setBusy(false);
++    }
++  }
++
++  return (
++    <form onSubmit={submit} className="photo-uploader">
++      <label htmlFor="item-photo">Item photo</label>
++      <input
++        id="item-photo"
++        type="file"
++        accept={ACCEPTED.join(",")}
++        onChange={(e) => setFile(e.target.files?.[0] ?? null)}
++      />
++      <button type="submit" disabled={!file || busy}>
++        Upload photo
++      </button>
++      <p role="status">{status}</p>
++    </form>
++  );
++}
+diff --git a/web/src/styles.css b/web/src/styles.css
+index b305ab1..381ac53 100644
+--- a/web/src/styles.css
++++ b/web/src/styles.css
+@@ -70,3 +70,9 @@ input:focus-visible {
+   color: var(--muted);
+   font-size: 0.875rem;
+ }
++
++.item-photo {
++  max-width: 100%;
++  max-height: 20rem;
++  object-fit: contain;
++}

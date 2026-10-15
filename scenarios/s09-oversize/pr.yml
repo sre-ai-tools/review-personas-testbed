@@ -1,0 +1,4 @@
+# Scenario PR, opened by scripts/scenario.py.
+title: Demo seed data
+body: |
+  Adds about 1,000 demo items and a script to load them into a local or staging database.

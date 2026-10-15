@@ -1,0 +1,7 @@
+# Scenario PR, opened by scripts/scenario.py.
+title: Add a bastion host (re-push)
+ci_only: true
+body: |
+  Lets on-call engineers SSH into the private subnets when something needs debugging.
+
+  scenario.py pushes a follow-up commit restricting SSH once the first review is posted.

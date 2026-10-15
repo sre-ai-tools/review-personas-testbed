@@ -1,0 +1,4 @@
+# Scenario PR, opened by scripts/scenario.py.
+title: Quick picks on the borrow form
+body: |
+  Adds 1, 2 and 4 week quick picks so people don't have to type a number of days.

@@ -1,0 +1,4 @@
+# Scenario PR, opened by scripts/scenario.py.
+title: Add a bastion host
+body: |
+  Lets on-call engineers SSH into the private subnets when something needs debugging.

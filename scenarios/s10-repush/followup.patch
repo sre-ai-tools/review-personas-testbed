@@ -1,0 +1,31 @@
+diff --git a/infra/bastion.tf b/infra/bastion.tf
+index 6280a1d..73f5b04 100644
+--- a/infra/bastion.tf
++++ b/infra/bastion.tf
+@@ -32,11 +32,11 @@ resource "aws_security_group" "bastion" {
+   vpc_id      = aws_vpc.main.id
+ 
+   ingress {
+-    description = "SSH"
++    description = "SSH from the office VPN only"
+     from_port   = 22
+     to_port     = 22
+     protocol    = "tcp"
+-    cidr_blocks = ["0.0.0.0/0"]
++    cidr_blocks = var.admin_cidrs
+   }
+ 
+   egress {
+diff --git a/infra/variables.tf b/infra/variables.tf
+index 5406dab..d108d24 100644
+--- a/infra/variables.tf
++++ b/infra/variables.tf
+@@ -38,3 +38,8 @@ variable "bastion_key_name" {
+   description = "EC2 key pair for the bastion host"
+   type        = string
+ }
++
++variable "admin_cidrs" {
++  description = "Office VPN ranges allowed to SSH to the bastion"
++  type        = list(string)
++}

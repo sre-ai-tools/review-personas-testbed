@@ -1,0 +1,9 @@
+# Scenario PR, opened by scripts/scenario.py.
+title: Add item photos
+body: |
+  Owners can upload a photo of an item; everyone sees it on the item page.
+
+  - S3 bucket for photos, uploaded and downloaded with short-lived presigned URLs
+  - `POST /items/{id}/photo` returns a presigned POST (owner only, 5 MB, JPEG/PNG/WebP)
+  - `photo_url` on items
+  - Migration adds `items.photo_key`

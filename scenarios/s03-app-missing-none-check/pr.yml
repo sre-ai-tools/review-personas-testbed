@@ -1,0 +1,4 @@
+# Scenario PR, opened by scripts/scenario.py.
+title: Let borrowers extend a loan
+body: |
+  Adds `POST /loans/{id}/extend` so a borrower can push the due date back by up to 30 days.

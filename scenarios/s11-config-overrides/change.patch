@@ -1,0 +1,25 @@
+diff --git a/.github/review-personas.yml b/.github/review-personas.yml
+index 86cacf5..b9c69ea 100644
+--- a/.github/review-personas.yml
++++ b/.github/review-personas.yml
+@@ -4,5 +4,8 @@
+ exclude_sensitive: ["config/prod/*"]
+ 
+ personas:
++  aws-architect:
++    enabled: false
+   dba:
++    model: global.anthropic.claude-sonnet-5-5
+     extra_focus: "We run Postgres 16 on RDS and loans holds millions of rows. Flag migrations that take ACCESS EXCLUSIVE locks or rewrite large tables."
+diff --git a/db/migrations/004_items_kind_idx.sql b/db/migrations/004_items_kind_idx.sql
+new file mode 100644
+index 0000000..eae31b0
+--- /dev/null
++++ b/db/migrations/004_items_kind_idx.sql
+@@ -0,0 +1,6 @@
++-- migrate:up transaction:false
++-- items already holds production data, so build the index without blocking writes.
++CREATE INDEX CONCURRENTLY IF NOT EXISTS items_kind_created_at_idx ON items (kind, created_at);
++
++-- migrate:down transaction:false
++DROP INDEX CONCURRENTLY IF EXISTS items_kind_created_at_idx;

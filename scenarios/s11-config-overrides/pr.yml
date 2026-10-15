@@ -1,0 +1,4 @@
+# Scenario PR, opened by scripts/scenario.py.
+title: Index items by kind
+body: |
+  Adds an index for listing items by kind, and turns off the AWS architect while we trial the DBA on a different model.

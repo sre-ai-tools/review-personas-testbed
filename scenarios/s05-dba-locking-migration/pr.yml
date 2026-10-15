@@ -1,0 +1,4 @@
+# Scenario PR, opened by scripts/scenario.py.
+title: Record return condition on loans
+body: |
+  Adds `returned_condition` to loans so we can track damaged items.

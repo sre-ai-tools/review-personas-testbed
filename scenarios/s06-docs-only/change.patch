@@ -1,0 +1,31 @@
+diff --git a/docs/README.md b/docs/README.md
+index 5f99fe6..424c409 100644
+--- a/docs/README.md
++++ b/docs/README.md
+@@ -10,3 +10,14 @@ Shelf is a team lending library: people list books and equipment they own, and c
+ | Database | `db/migrations/` | Postgres migrations, applied in order with dbmate |
+ 
+ See [architecture.md](architecture.md) for how the parts fit together.
++
++## Glossary
++
++- **Item:** a book or piece of equipment someone has listed for lending.
++- **Owner:** the person who listed the item.
++- **Loan:** one borrowing of an item, from when it is borrowed until it is returned.
++- **Late fee:** charged when a loan is returned after its due date; see [architecture.md](architecture.md).
++
++## Getting help
++
++Ask in the #shelf channel, or open an issue in this repository.
+diff --git a/docs/architecture.md b/docs/architecture.md
+index c10f89c..7ad9fca 100644
+--- a/docs/architecture.md
++++ b/docs/architecture.md
+@@ -8,6 +8,6 @@ browser ──▶ CloudFront ──▶ S3 (web/ build)
+ 
+ - **Identity.** API Gateway verifies the SSO token. The API reads the caller's email from the verified claims and never trusts an email in the request body.
+ - **Loans.** An item has at most one open loan. The API checks it inside a transaction with the item row locked, and a partial unique index enforces it in the database.
+-- **Late fees.** 50 cents a day, capped at $20, stored in whole cents.
++- **Late fees.** 50 cents for each day late, capped at $20. Fees are stored in whole cents, so there is no rounding.
+ - **Database credentials.** RDS manages the master password in Secrets Manager. The Lambda reads it through a VPC endpoint; nothing is stored in code or environment variables.
+ - **Migrations.** dbmate applies `db/migrations/` in order. Migrations that touch existing large tables must not block writes: build indexes `CONCURRENTLY` (with `transaction:false`) and add columns in steps.

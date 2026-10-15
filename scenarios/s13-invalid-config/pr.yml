@@ -1,0 +1,5 @@
+# Scenario PR, opened by scripts/scenario.py.
+title: Config typo
+ci_only: true
+body: |
+  Exercises the config error path: `persnas` is a typo for `personas`.

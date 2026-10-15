@@ -1,0 +1,57 @@
+diff --git a/api/app/models.py b/api/app/models.py
+index ce05893..642b849 100644
+--- a/api/app/models.py
++++ b/api/app/models.py
+@@ -25,6 +25,10 @@ class LoanCreate(BaseModel):
+     days: int = Field(default=14, ge=1, le=60)
+ 
+ 
++class LoanExtend(BaseModel):
++    days: int = Field(ge=1, le=30)
++
++
+ class Loan(BaseModel):
+     id: int
+     item_id: int
+diff --git a/api/app/routes/loans.py b/api/app/routes/loans.py
+index d36cdef..e1f9b40 100644
+--- a/api/app/routes/loans.py
++++ b/api/app/routes/loans.py
+@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends, HTTPException
+ from .. import db
+ from ..auth import current_email
+ from ..fees import late_fee_cents
+-from ..models import Loan, LoanCreate
++from ..models import Loan, LoanCreate, LoanExtend
+ 
+ router = APIRouter(prefix="/loans", tags=["loans"])
+ 
+@@ -51,6 +51,28 @@ def return_item(loan_id: int, email: Annotated[str, Depends(current_email)]) ->
+         return cur.fetchone()
+ 
+ 
++def _open_loan(cur, loan_id: int) -> dict | None:
++    cur.execute(
++        "SELECT * FROM loans WHERE id = %s AND returned_at IS NULL FOR UPDATE", (loan_id,)
++    )
++    return cur.fetchone()
++
++
++@router.post("/{loan_id}/extend", response_model=Loan)
++def extend(
++    loan_id: int, body: LoanExtend, email: Annotated[str, Depends(current_email)]
++) -> dict:
++    with db.transaction() as cur:
++        loan = _open_loan(cur, loan_id)
++        if loan["borrower_email"] != email:
++            raise HTTPException(status_code=403, detail="Only the borrower can extend this loan")
++        cur.execute(
++            "UPDATE loans SET due_at = %s WHERE id = %s RETURNING *",
++            (loan["due_at"] + timedelta(days=body.days), loan_id),
++        )
++        return cur.fetchone()
++
++
+ @router.get("/overdue", response_model=list[Loan])
+ def overdue(email: Annotated[str, Depends(current_email)]) -> list[dict]:
+     return db.fetch_all(

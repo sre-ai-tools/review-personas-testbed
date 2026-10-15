@@ -1,0 +1,5 @@
+# Scenario PR, opened by scripts/scenario.py.
+title: Friendlier empty state
+ci_only: true
+body: |
+  Makes the empty item list suggest what to do next.

@@ -1,0 +1,4 @@
+# Scenario PR, opened by scripts/scenario.py.
+title: Docs: glossary and help
+body: |
+  Adds a glossary and a getting-help section to the Shelf docs.

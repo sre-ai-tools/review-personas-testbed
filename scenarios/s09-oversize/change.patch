@@ -1,0 +1,5439 @@
+diff --git a/api/app/data/seed_items.json b/api/app/data/seed_items.json
+new file mode 100644
+index 0000000..c8924af
+--- /dev/null
++++ b/api/app/data/seed_items.json
+@@ -0,0 +1,5402 @@
++[
++  {
++    "title": "USB-C hub #18",
++    "kind": "equipment",
++    "owner_email": "user32@example.com"
++  },
++  {
++    "title": "Modern Accessibility Guide",
++    "kind": "book",
++    "owner_email": "user76@example.com"
++  },
++  {
++    "title": "Practical Python Patterns",
++    "kind": "book",
++    "owner_email": "user30@example.com"
++  },
++  {
++    "title": "Practical Design Patterns",
++    "kind": "book",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Field Testing in Practice",
++    "kind": "book",
++    "owner_email": "user01@example.com"
++  },
++  {
++    "title": "Webcam #28",
++    "kind": "equipment",
++    "owner_email": "user44@example.com"
++  },
++  {
++    "title": "Advanced Networking Guide",
++    "kind": "book",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Illustrated Networking in Practice",
++    "kind": "book",
++    "owner_email": "user06@example.com"
++  },
++  {
++    "title": "Drawing tablet #8",
++    "kind": "equipment",
++    "owner_email": "user49@example.com"
++  },
++  {
++    "title": "Complete Accessibility Fundamentals",
++    "kind": "book",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Modern Postgres Patterns",
++    "kind": "book",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Projector #15",
++    "kind": "equipment",
++    "owner_email": "user13@example.com"
++  },
++  {
++    "title": "Field Accessibility Fundamentals",
++    "kind": "book",
++    "owner_email": "user21@example.com"
++  },
++  {
++    "title": "Advanced Accessibility in Practice",
++    "kind": "book",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Webcam #35",
++    "kind": "equipment",
++    "owner_email": "user32@example.com"
++  },
++  {
++    "title": "Pocket TypeScript Patterns",
++    "kind": "book",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #4",
++    "kind": "equipment",
++    "owner_email": "user30@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #21",
++    "kind": "equipment",
++    "owner_email": "user52@example.com"
++  },
++  {
++    "title": "Advanced Testing Fundamentals",
++    "kind": "book",
++    "owner_email": "user28@example.com"
++  },
++  {
++    "title": "Multimeter #30",
++    "kind": "equipment",
++    "owner_email": "user19@example.com"
++  },
++  {
++    "title": "Advanced Statistics in Practice",
++    "kind": "book",
++    "owner_email": "user75@example.com"
++  },
++  {
++    "title": "Applied Observability Fundamentals",
++    "kind": "book",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Webcam #33",
++    "kind": "equipment",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Practical Python Cookbook",
++    "kind": "book",
++    "owner_email": "user21@example.com"
++  },
++  {
++    "title": "Multimeter #39",
++    "kind": "equipment",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Applied Security in Practice",
++    "kind": "book",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "USB-C hub #8",
++    "kind": "equipment",
++    "owner_email": "user69@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #22",
++    "kind": "equipment",
++    "owner_email": "user15@example.com"
++  },
++  {
++    "title": "Essential Security Handbook",
++    "kind": "book",
++    "owner_email": "user34@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #12",
++    "kind": "equipment",
++    "owner_email": "user65@example.com"
++  },
++  {
++    "title": "Projector #20",
++    "kind": "equipment",
++    "owner_email": "user65@example.com"
++  },
++  {
++    "title": "Webcam #24",
++    "kind": "equipment",
++    "owner_email": "user21@example.com"
++  },
++  {
++    "title": "Concise Postgres Fundamentals",
++    "kind": "book",
++    "owner_email": "user63@example.com"
++  },
++  {
++    "title": "Illustrated TypeScript Patterns",
++    "kind": "book",
++    "owner_email": "user08@example.com"
++  },
++  {
++    "title": "Applied Python Guide",
++    "kind": "book",
++    "owner_email": "user63@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #35",
++    "kind": "equipment",
++    "owner_email": "user17@example.com"
++  },
++  {
++    "title": "Field Design Cookbook",
++    "kind": "book",
++    "owner_email": "user34@example.com"
++  },
++  {
++    "title": "Applied Observability Patterns",
++    "kind": "book",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #13",
++    "kind": "equipment",
++    "owner_email": "user40@example.com"
++  },
++  {
++    "title": "Illustrated Security Primer",
++    "kind": "book",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Modern Networking Handbook",
++    "kind": "book",
++    "owner_email": "user76@example.com"
++  },
++  {
++    "title": "Applied Terraform Handbook",
++    "kind": "book",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "USB-C hub #15",
++    "kind": "equipment",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Projector #22",
++    "kind": "equipment",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Complete Accessibility Primer",
++    "kind": "book",
++    "owner_email": "user28@example.com"
++  },
++  {
++    "title": "Applied Testing Primer",
++    "kind": "book",
++    "owner_email": "user32@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #27",
++    "kind": "equipment",
++    "owner_email": "user25@example.com"
++  },
++  {
++    "title": "Pocket Networking Field Notes",
++    "kind": "book",
++    "owner_email": "user53@example.com"
++  },
++  {
++    "title": "Practical Accessibility Guide",
++    "kind": "book",
++    "owner_email": "user08@example.com"
++  },
++  {
++    "title": "Illustrated Python Patterns",
++    "kind": "book",
++    "owner_email": "user25@example.com"
++  },
++  {
++    "title": "Field Kubernetes Field Notes",
++    "kind": "book",
++    "owner_email": "user24@example.com"
++  },
++  {
++    "title": "Advanced Python Primer",
++    "kind": "book",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Concise Postgres Guide",
++    "kind": "book",
++    "owner_email": "user31@example.com"
++  },
++  {
++    "title": "Field Security Patterns",
++    "kind": "book",
++    "owner_email": "user52@example.com"
++  },
++  {
++    "title": "Webcam #25",
++    "kind": "equipment",
++    "owner_email": "user01@example.com"
++  },
++  {
++    "title": "Label printer #30",
++    "kind": "equipment",
++    "owner_email": "user37@example.com"
++  },
++  {
++    "title": "Concise Accessibility Primer",
++    "kind": "book",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Advanced Postgres Handbook",
++    "kind": "book",
++    "owner_email": "user41@example.com"
++  },
++  {
++    "title": "Applied Security Cookbook",
++    "kind": "book",
++    "owner_email": "user08@example.com"
++  },
++  {
++    "title": "Portable monitor #12",
++    "kind": "equipment",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Advanced Observability Guide",
++    "kind": "book",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Applied Postgres Guide",
++    "kind": "book",
++    "owner_email": "user54@example.com"
++  },
++  {
++    "title": "Tripod #34",
++    "kind": "equipment",
++    "owner_email": "user41@example.com"
++  },
++  {
++    "title": "Conference speaker #21",
++    "kind": "equipment",
++    "owner_email": "user31@example.com"
++  },
++  {
++    "title": "Essential Accessibility in Practice",
++    "kind": "book",
++    "owner_email": "user59@example.com"
++  },
++  {
++    "title": "Modern Postgres Primer",
++    "kind": "book",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Portable monitor #5",
++    "kind": "equipment",
++    "owner_email": "user69@example.com"
++  },
++  {
++    "title": "Complete Kubernetes Fundamentals",
++    "kind": "book",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Soldering iron #19",
++    "kind": "equipment",
++    "owner_email": "user21@example.com"
++  },
++  {
++    "title": "Concise Statistics in Practice",
++    "kind": "book",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #34",
++    "kind": "equipment",
++    "owner_email": "user02@example.com"
++  },
++  {
++    "title": "Drawing tablet #20",
++    "kind": "equipment",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Webcam #17",
++    "kind": "equipment",
++    "owner_email": "user15@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #36",
++    "kind": "equipment",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Applied Terraform Fundamentals",
++    "kind": "book",
++    "owner_email": "user27@example.com"
++  },
++  {
++    "title": "Projector #17",
++    "kind": "equipment",
++    "owner_email": "user65@example.com"
++  },
++  {
++    "title": "Practical Python Field Notes",
++    "kind": "book",
++    "owner_email": "user36@example.com"
++  },
++  {
++    "title": "Illustrated Kubernetes in Practice",
++    "kind": "book",
++    "owner_email": "user21@example.com"
++  },
++  {
++    "title": "Drawing tablet #28",
++    "kind": "equipment",
++    "owner_email": "user72@example.com"
++  },
++  {
++    "title": "Modern Statistics Cookbook",
++    "kind": "book",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Illustrated Testing Cookbook",
++    "kind": "book",
++    "owner_email": "user56@example.com"
++  },
++  {
++    "title": "Complete Networking Handbook",
++    "kind": "book",
++    "owner_email": "user46@example.com"
++  },
++  {
++    "title": "Advanced Accessibility Guide",
++    "kind": "book",
++    "owner_email": "user46@example.com"
++  },
++  {
++    "title": "Laser pointer #27",
++    "kind": "equipment",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Laser pointer #16",
++    "kind": "equipment",
++    "owner_email": "user21@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #12",
++    "kind": "equipment",
++    "owner_email": "user53@example.com"
++  },
++  {
++    "title": "Illustrated Observability Patterns",
++    "kind": "book",
++    "owner_email": "user35@example.com"
++  },
++  {
++    "title": "Modern Observability Handbook",
++    "kind": "book",
++    "owner_email": "user61@example.com"
++  },
++  {
++    "title": "Field Networking in Practice",
++    "kind": "book",
++    "owner_email": "user30@example.com"
++  },
++  {
++    "title": "Advanced Observability Fundamentals",
++    "kind": "book",
++    "owner_email": "user36@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #18",
++    "kind": "equipment",
++    "owner_email": "user45@example.com"
++  },
++  {
++    "title": "Multimeter #35",
++    "kind": "equipment",
++    "owner_email": "user43@example.com"
++  },
++  {
++    "title": "Portable monitor #17",
++    "kind": "equipment",
++    "owner_email": "user23@example.com"
++  },
++  {
++    "title": "Complete Postgres Guide",
++    "kind": "book",
++    "owner_email": "user77@example.com"
++  },
++  {
++    "title": "Illustrated Observability Guide",
++    "kind": "book",
++    "owner_email": "user50@example.com"
++  },
++  {
++    "title": "Conference speaker #17",
++    "kind": "equipment",
++    "owner_email": "user06@example.com"
++  },
++  {
++    "title": "USB-C hub #34",
++    "kind": "equipment",
++    "owner_email": "user69@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #13",
++    "kind": "equipment",
++    "owner_email": "user47@example.com"
++  },
++  {
++    "title": "Illustrated Testing Fundamentals",
++    "kind": "book",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Label printer #33",
++    "kind": "equipment",
++    "owner_email": "user40@example.com"
++  },
++  {
++    "title": "Soldering iron #26",
++    "kind": "equipment",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Advanced Observability Field Notes",
++    "kind": "book",
++    "owner_email": "user23@example.com"
++  },
++  {
++    "title": "Label printer #26",
++    "kind": "equipment",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Label printer #19",
++    "kind": "equipment",
++    "owner_email": "user27@example.com"
++  },
++  {
++    "title": "Applied Testing Fundamentals",
++    "kind": "book",
++    "owner_email": "user60@example.com"
++  },
++  {
++    "title": "Advanced Design Primer",
++    "kind": "book",
++    "owner_email": "user22@example.com"
++  },
++  {
++    "title": "Label printer #33",
++    "kind": "equipment",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Advanced Accessibility in Practice",
++    "kind": "book",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Webcam #2",
++    "kind": "equipment",
++    "owner_email": "user06@example.com"
++  },
++  {
++    "title": "Field Testing Guide",
++    "kind": "book",
++    "owner_email": "user59@example.com"
++  },
++  {
++    "title": "Applied Terraform Field Notes",
++    "kind": "book",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Essential Accessibility Handbook",
++    "kind": "book",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Conference speaker #12",
++    "kind": "equipment",
++    "owner_email": "user67@example.com"
++  },
++  {
++    "title": "Concise Terraform Guide",
++    "kind": "book",
++    "owner_email": "user59@example.com"
++  },
++  {
++    "title": "Field Accessibility Fundamentals",
++    "kind": "book",
++    "owner_email": "user57@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #33",
++    "kind": "equipment",
++    "owner_email": "user55@example.com"
++  },
++  {
++    "title": "Drawing tablet #29",
++    "kind": "equipment",
++    "owner_email": "user21@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #29",
++    "kind": "equipment",
++    "owner_email": "user34@example.com"
++  },
++  {
++    "title": "Projector #18",
++    "kind": "equipment",
++    "owner_email": "user67@example.com"
++  },
++  {
++    "title": "Advanced TypeScript Primer",
++    "kind": "book",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Conference speaker #18",
++    "kind": "equipment",
++    "owner_email": "user43@example.com"
++  },
++  {
++    "title": "Concise Python Cookbook",
++    "kind": "book",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Essential Statistics Patterns",
++    "kind": "book",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Illustrated Design Primer",
++    "kind": "book",
++    "owner_email": "user54@example.com"
++  },
++  {
++    "title": "Pocket Observability Handbook",
++    "kind": "book",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Practical Networking in Practice",
++    "kind": "book",
++    "owner_email": "user50@example.com"
++  },
++  {
++    "title": "Projector #27",
++    "kind": "equipment",
++    "owner_email": "user69@example.com"
++  },
++  {
++    "title": "Drawing tablet #39",
++    "kind": "equipment",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Complete Observability Primer",
++    "kind": "book",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Pocket Statistics Cookbook",
++    "kind": "book",
++    "owner_email": "user60@example.com"
++  },
++  {
++    "title": "Tripod #35",
++    "kind": "equipment",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Tripod #37",
++    "kind": "equipment",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Pocket Kubernetes Primer",
++    "kind": "book",
++    "owner_email": "user24@example.com"
++  },
++  {
++    "title": "Pocket Networking Patterns",
++    "kind": "book",
++    "owner_email": "user59@example.com"
++  },
++  {
++    "title": "Pocket TypeScript Field Notes",
++    "kind": "book",
++    "owner_email": "user33@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #2",
++    "kind": "equipment",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Illustrated Terraform Guide",
++    "kind": "book",
++    "owner_email": "user06@example.com"
++  },
++  {
++    "title": "Conference speaker #13",
++    "kind": "equipment",
++    "owner_email": "user03@example.com"
++  },
++  {
++    "title": "Conference speaker #9",
++    "kind": "equipment",
++    "owner_email": "user61@example.com"
++  },
++  {
++    "title": "Tripod #14",
++    "kind": "equipment",
++    "owner_email": "user60@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #24",
++    "kind": "equipment",
++    "owner_email": "user22@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #8",
++    "kind": "equipment",
++    "owner_email": "user21@example.com"
++  },
++  {
++    "title": "Portable monitor #38",
++    "kind": "equipment",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Tripod #25",
++    "kind": "equipment",
++    "owner_email": "user51@example.com"
++  },
++  {
++    "title": "Conference speaker #5",
++    "kind": "equipment",
++    "owner_email": "user76@example.com"
++  },
++  {
++    "title": "Ring light #16",
++    "kind": "equipment",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Label printer #39",
++    "kind": "equipment",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Tripod #3",
++    "kind": "equipment",
++    "owner_email": "user45@example.com"
++  },
++  {
++    "title": "Illustrated Python Fundamentals",
++    "kind": "book",
++    "owner_email": "user02@example.com"
++  },
++  {
++    "title": "Projector #32",
++    "kind": "equipment",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Illustrated Accessibility Primer",
++    "kind": "book",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Concise Accessibility in Practice",
++    "kind": "book",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Drawing tablet #31",
++    "kind": "equipment",
++    "owner_email": "user60@example.com"
++  },
++  {
++    "title": "Applied TypeScript Fundamentals",
++    "kind": "book",
++    "owner_email": "user32@example.com"
++  },
++  {
++    "title": "Portable monitor #18",
++    "kind": "equipment",
++    "owner_email": "user58@example.com"
++  },
++  {
++    "title": "Field Testing Field Notes",
++    "kind": "book",
++    "owner_email": "user44@example.com"
++  },
++  {
++    "title": "Illustrated Kubernetes Primer",
++    "kind": "book",
++    "owner_email": "user28@example.com"
++  },
++  {
++    "title": "Complete Networking in Practice",
++    "kind": "book",
++    "owner_email": "user77@example.com"
++  },
++  {
++    "title": "Label printer #36",
++    "kind": "equipment",
++    "owner_email": "user02@example.com"
++  },
++  {
++    "title": "Advanced Python Patterns",
++    "kind": "book",
++    "owner_email": "user53@example.com"
++  },
++  {
++    "title": "Advanced Statistics Primer",
++    "kind": "book",
++    "owner_email": "user63@example.com"
++  },
++  {
++    "title": "Practical Python in Practice",
++    "kind": "book",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Advanced TypeScript Fundamentals",
++    "kind": "book",
++    "owner_email": "user61@example.com"
++  },
++  {
++    "title": "Illustrated Observability Fundamentals",
++    "kind": "book",
++    "owner_email": "user46@example.com"
++  },
++  {
++    "title": "Label printer #20",
++    "kind": "equipment",
++    "owner_email": "user33@example.com"
++  },
++  {
++    "title": "Advanced Networking Guide",
++    "kind": "book",
++    "owner_email": "user69@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #12",
++    "kind": "equipment",
++    "owner_email": "user25@example.com"
++  },
++  {
++    "title": "Field TypeScript in Practice",
++    "kind": "book",
++    "owner_email": "user13@example.com"
++  },
++  {
++    "title": "Label printer #15",
++    "kind": "equipment",
++    "owner_email": "user47@example.com"
++  },
++  {
++    "title": "Practical Statistics Cookbook",
++    "kind": "book",
++    "owner_email": "user36@example.com"
++  },
++  {
++    "title": "Practical Design in Practice",
++    "kind": "book",
++    "owner_email": "user17@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #32",
++    "kind": "equipment",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Tripod #19",
++    "kind": "equipment",
++    "owner_email": "user61@example.com"
++  },
++  {
++    "title": "Illustrated Kubernetes Handbook",
++    "kind": "book",
++    "owner_email": "user33@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #8",
++    "kind": "equipment",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Modern Testing Handbook",
++    "kind": "book",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Applied TypeScript Guide",
++    "kind": "book",
++    "owner_email": "user32@example.com"
++  },
++  {
++    "title": "Pocket Testing Patterns",
++    "kind": "book",
++    "owner_email": "user67@example.com"
++  },
++  {
++    "title": "Field TypeScript Field Notes",
++    "kind": "book",
++    "owner_email": "user40@example.com"
++  },
++  {
++    "title": "Practical Testing Guide",
++    "kind": "book",
++    "owner_email": "user27@example.com"
++  },
++  {
++    "title": "Label printer #6",
++    "kind": "equipment",
++    "owner_email": "user21@example.com"
++  },
++  {
++    "title": "Concise Python Cookbook",
++    "kind": "book",
++    "owner_email": "user01@example.com"
++  },
++  {
++    "title": "Applied Security in Practice",
++    "kind": "book",
++    "owner_email": "user05@example.com"
++  },
++  {
++    "title": "Complete Statistics Primer",
++    "kind": "book",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Laser pointer #17",
++    "kind": "equipment",
++    "owner_email": "user76@example.com"
++  },
++  {
++    "title": "Laser pointer #13",
++    "kind": "equipment",
++    "owner_email": "user55@example.com"
++  },
++  {
++    "title": "Advanced Accessibility Cookbook",
++    "kind": "book",
++    "owner_email": "user35@example.com"
++  },
++  {
++    "title": "Portable monitor #4",
++    "kind": "equipment",
++    "owner_email": "user22@example.com"
++  },
++  {
++    "title": "Tripod #37",
++    "kind": "equipment",
++    "owner_email": "user37@example.com"
++  },
++  {
++    "title": "Field Statistics in Practice",
++    "kind": "book",
++    "owner_email": "user52@example.com"
++  },
++  {
++    "title": "Drawing tablet #35",
++    "kind": "equipment",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Applied Postgres Field Notes",
++    "kind": "book",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "USB-C hub #6",
++    "kind": "equipment",
++    "owner_email": "user30@example.com"
++  },
++  {
++    "title": "Projector #37",
++    "kind": "equipment",
++    "owner_email": "user76@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #18",
++    "kind": "equipment",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Essential Security Primer",
++    "kind": "book",
++    "owner_email": "user36@example.com"
++  },
++  {
++    "title": "Applied Observability Primer",
++    "kind": "book",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Pocket Networking Fundamentals",
++    "kind": "book",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Soldering iron #27",
++    "kind": "equipment",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Pocket Design Handbook",
++    "kind": "book",
++    "owner_email": "user59@example.com"
++  },
++  {
++    "title": "Complete Networking Guide",
++    "kind": "book",
++    "owner_email": "user52@example.com"
++  },
++  {
++    "title": "Projector #1",
++    "kind": "equipment",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Practical Terraform Fundamentals",
++    "kind": "book",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Ring light #29",
++    "kind": "equipment",
++    "owner_email": "user07@example.com"
++  },
++  {
++    "title": "Concise Kubernetes in Practice",
++    "kind": "book",
++    "owner_email": "user57@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #8",
++    "kind": "equipment",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Tripod #16",
++    "kind": "equipment",
++    "owner_email": "user21@example.com"
++  },
++  {
++    "title": "Practical Design Field Notes",
++    "kind": "book",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Modern Security Guide",
++    "kind": "book",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Complete Design in Practice",
++    "kind": "book",
++    "owner_email": "user54@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #16",
++    "kind": "equipment",
++    "owner_email": "user59@example.com"
++  },
++  {
++    "title": "Pocket Terraform Cookbook",
++    "kind": "book",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Pocket Networking in Practice",
++    "kind": "book",
++    "owner_email": "user01@example.com"
++  },
++  {
++    "title": "Complete Testing Primer",
++    "kind": "book",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Field Networking Fundamentals",
++    "kind": "book",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Multimeter #30",
++    "kind": "equipment",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #16",
++    "kind": "equipment",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Pocket Postgres Fundamentals",
++    "kind": "book",
++    "owner_email": "user61@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #25",
++    "kind": "equipment",
++    "owner_email": "user50@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #10",
++    "kind": "equipment",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Webcam #33",
++    "kind": "equipment",
++    "owner_email": "user76@example.com"
++  },
++  {
++    "title": "Modern Security Guide",
++    "kind": "book",
++    "owner_email": "user68@example.com"
++  },
++  {
++    "title": "USB-C hub #10",
++    "kind": "equipment",
++    "owner_email": "user53@example.com"
++  },
++  {
++    "title": "Webcam #5",
++    "kind": "equipment",
++    "owner_email": "user61@example.com"
++  },
++  {
++    "title": "Label printer #22",
++    "kind": "equipment",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Ring light #6",
++    "kind": "equipment",
++    "owner_email": "user43@example.com"
++  },
++  {
++    "title": "Projector #35",
++    "kind": "equipment",
++    "owner_email": "user49@example.com"
++  },
++  {
++    "title": "Ring light #32",
++    "kind": "equipment",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Modern Terraform in Practice",
++    "kind": "book",
++    "owner_email": "user30@example.com"
++  },
++  {
++    "title": "Multimeter #7",
++    "kind": "equipment",
++    "owner_email": "user13@example.com"
++  },
++  {
++    "title": "Complete Postgres Handbook",
++    "kind": "book",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "Label printer #23",
++    "kind": "equipment",
++    "owner_email": "user48@example.com"
++  },
++  {
++    "title": "Advanced Design Field Notes",
++    "kind": "book",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Webcam #11",
++    "kind": "equipment",
++    "owner_email": "user23@example.com"
++  },
++  {
++    "title": "Pocket Testing Patterns",
++    "kind": "book",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Webcam #15",
++    "kind": "equipment",
++    "owner_email": "user60@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #17",
++    "kind": "equipment",
++    "owner_email": "user02@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #19",
++    "kind": "equipment",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Field Networking in Practice",
++    "kind": "book",
++    "owner_email": "user55@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #20",
++    "kind": "equipment",
++    "owner_email": "user26@example.com"
++  },
++  {
++    "title": "Projector #31",
++    "kind": "equipment",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Applied Networking in Practice",
++    "kind": "book",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Pocket TypeScript Handbook",
++    "kind": "book",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #4",
++    "kind": "equipment",
++    "owner_email": "user78@example.com"
++  },
++  {
++    "title": "Projector #19",
++    "kind": "equipment",
++    "owner_email": "user30@example.com"
++  },
++  {
++    "title": "Soldering iron #15",
++    "kind": "equipment",
++    "owner_email": "user25@example.com"
++  },
++  {
++    "title": "Ring light #9",
++    "kind": "equipment",
++    "owner_email": "user13@example.com"
++  },
++  {
++    "title": "Ring light #3",
++    "kind": "equipment",
++    "owner_email": "user40@example.com"
++  },
++  {
++    "title": "USB-C hub #38",
++    "kind": "equipment",
++    "owner_email": "user47@example.com"
++  },
++  {
++    "title": "Portable monitor #19",
++    "kind": "equipment",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "Webcam #13",
++    "kind": "equipment",
++    "owner_email": "user17@example.com"
++  },
++  {
++    "title": "Laser pointer #24",
++    "kind": "equipment",
++    "owner_email": "user68@example.com"
++  },
++  {
++    "title": "Complete Kubernetes in Practice",
++    "kind": "book",
++    "owner_email": "user62@example.com"
++  },
++  {
++    "title": "Label printer #22",
++    "kind": "equipment",
++    "owner_email": "user15@example.com"
++  },
++  {
++    "title": "Modern Kubernetes Patterns",
++    "kind": "book",
++    "owner_email": "user51@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #36",
++    "kind": "equipment",
++    "owner_email": "user47@example.com"
++  },
++  {
++    "title": "Pocket Postgres in Practice",
++    "kind": "book",
++    "owner_email": "user69@example.com"
++  },
++  {
++    "title": "Illustrated Accessibility in Practice",
++    "kind": "book",
++    "owner_email": "user75@example.com"
++  },
++  {
++    "title": "Illustrated Python Patterns",
++    "kind": "book",
++    "owner_email": "user61@example.com"
++  },
++  {
++    "title": "Concise Networking Patterns",
++    "kind": "book",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #20",
++    "kind": "equipment",
++    "owner_email": "user53@example.com"
++  },
++  {
++    "title": "Practical Postgres in Practice",
++    "kind": "book",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Advanced Design Cookbook",
++    "kind": "book",
++    "owner_email": "user50@example.com"
++  },
++  {
++    "title": "Concise Observability Cookbook",
++    "kind": "book",
++    "owner_email": "user54@example.com"
++  },
++  {
++    "title": "Projector #32",
++    "kind": "equipment",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Complete Postgres Fundamentals",
++    "kind": "book",
++    "owner_email": "user28@example.com"
++  },
++  {
++    "title": "Advanced Networking Guide",
++    "kind": "book",
++    "owner_email": "user48@example.com"
++  },
++  {
++    "title": "Illustrated Postgres Field Notes",
++    "kind": "book",
++    "owner_email": "user36@example.com"
++  },
++  {
++    "title": "Modern Security Guide",
++    "kind": "book",
++    "owner_email": "user28@example.com"
++  },
++  {
++    "title": "Tripod #2",
++    "kind": "equipment",
++    "owner_email": "user07@example.com"
++  },
++  {
++    "title": "Conference speaker #9",
++    "kind": "equipment",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Concise Terraform Patterns",
++    "kind": "book",
++    "owner_email": "user30@example.com"
++  },
++  {
++    "title": "Essential Testing Handbook",
++    "kind": "book",
++    "owner_email": "user36@example.com"
++  },
++  {
++    "title": "Webcam #9",
++    "kind": "equipment",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Essential Python Handbook",
++    "kind": "book",
++    "owner_email": "user17@example.com"
++  },
++  {
++    "title": "Advanced Testing Fundamentals",
++    "kind": "book",
++    "owner_email": "user03@example.com"
++  },
++  {
++    "title": "Practical Kubernetes Field Notes",
++    "kind": "book",
++    "owner_email": "user68@example.com"
++  },
++  {
++    "title": "Modern Security Primer",
++    "kind": "book",
++    "owner_email": "user47@example.com"
++  },
++  {
++    "title": "Modern Security Patterns",
++    "kind": "book",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Concise TypeScript Primer",
++    "kind": "book",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Field Observability Field Notes",
++    "kind": "book",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Field Python Guide",
++    "kind": "book",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "Portable monitor #9",
++    "kind": "equipment",
++    "owner_email": "user36@example.com"
++  },
++  {
++    "title": "Tripod #36",
++    "kind": "equipment",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "Applied Design in Practice",
++    "kind": "book",
++    "owner_email": "user59@example.com"
++  },
++  {
++    "title": "Pocket Python Guide",
++    "kind": "book",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Conference speaker #28",
++    "kind": "equipment",
++    "owner_email": "user58@example.com"
++  },
++  {
++    "title": "Multimeter #22",
++    "kind": "equipment",
++    "owner_email": "user59@example.com"
++  },
++  {
++    "title": "Modern Networking Field Notes",
++    "kind": "book",
++    "owner_email": "user41@example.com"
++  },
++  {
++    "title": "Soldering iron #10",
++    "kind": "equipment",
++    "owner_email": "user61@example.com"
++  },
++  {
++    "title": "Modern Python Field Notes",
++    "kind": "book",
++    "owner_email": "user13@example.com"
++  },
++  {
++    "title": "Soldering iron #9",
++    "kind": "equipment",
++    "owner_email": "user72@example.com"
++  },
++  {
++    "title": "Concise Design Fundamentals",
++    "kind": "book",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Pocket Statistics Handbook",
++    "kind": "book",
++    "owner_email": "user37@example.com"
++  },
++  {
++    "title": "Soldering iron #7",
++    "kind": "equipment",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Essential Accessibility Primer",
++    "kind": "book",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Soldering iron #36",
++    "kind": "equipment",
++    "owner_email": "user48@example.com"
++  },
++  {
++    "title": "Complete Testing Patterns",
++    "kind": "book",
++    "owner_email": "user55@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #40",
++    "kind": "equipment",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Drawing tablet #2",
++    "kind": "equipment",
++    "owner_email": "user78@example.com"
++  },
++  {
++    "title": "Projector #18",
++    "kind": "equipment",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Complete Networking Fundamentals",
++    "kind": "book",
++    "owner_email": "user01@example.com"
++  },
++  {
++    "title": "Essential Testing Field Notes",
++    "kind": "book",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Practical Python Patterns",
++    "kind": "book",
++    "owner_email": "user49@example.com"
++  },
++  {
++    "title": "Illustrated Kubernetes Fundamentals",
++    "kind": "book",
++    "owner_email": "user40@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #37",
++    "kind": "equipment",
++    "owner_email": "user77@example.com"
++  },
++  {
++    "title": "Practical Kubernetes Cookbook",
++    "kind": "book",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Modern TypeScript Primer",
++    "kind": "book",
++    "owner_email": "user55@example.com"
++  },
++  {
++    "title": "Field Observability in Practice",
++    "kind": "book",
++    "owner_email": "user28@example.com"
++  },
++  {
++    "title": "Portable monitor #23",
++    "kind": "equipment",
++    "owner_email": "user56@example.com"
++  },
++  {
++    "title": "Applied Security in Practice",
++    "kind": "book",
++    "owner_email": "user06@example.com"
++  },
++  {
++    "title": "Applied Postgres Handbook",
++    "kind": "book",
++    "owner_email": "user27@example.com"
++  },
++  {
++    "title": "Advanced Kubernetes in Practice",
++    "kind": "book",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Practical Security Field Notes",
++    "kind": "book",
++    "owner_email": "user23@example.com"
++  },
++  {
++    "title": "Concise Statistics Patterns",
++    "kind": "book",
++    "owner_email": "user65@example.com"
++  },
++  {
++    "title": "Illustrated Python Field Notes",
++    "kind": "book",
++    "owner_email": "user06@example.com"
++  },
++  {
++    "title": "Field Python Fundamentals",
++    "kind": "book",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Pocket Statistics Field Notes",
++    "kind": "book",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Practical Networking Cookbook",
++    "kind": "book",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Illustrated Python Field Notes",
++    "kind": "book",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Applied Observability Guide",
++    "kind": "book",
++    "owner_email": "user51@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #22",
++    "kind": "equipment",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Essential Python Guide",
++    "kind": "book",
++    "owner_email": "user68@example.com"
++  },
++  {
++    "title": "Illustrated Networking Cookbook",
++    "kind": "book",
++    "owner_email": "user31@example.com"
++  },
++  {
++    "title": "Complete Terraform Cookbook",
++    "kind": "book",
++    "owner_email": "user78@example.com"
++  },
++  {
++    "title": "Modern Kubernetes Primer",
++    "kind": "book",
++    "owner_email": "user60@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #38",
++    "kind": "equipment",
++    "owner_email": "user58@example.com"
++  },
++  {
++    "title": "Laser pointer #37",
++    "kind": "equipment",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Illustrated Kubernetes Primer",
++    "kind": "book",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Complete TypeScript Handbook",
++    "kind": "book",
++    "owner_email": "user46@example.com"
++  },
++  {
++    "title": "Complete Security Primer",
++    "kind": "book",
++    "owner_email": "user05@example.com"
++  },
++  {
++    "title": "Complete Python Guide",
++    "kind": "book",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Pocket Security Handbook",
++    "kind": "book",
++    "owner_email": "user58@example.com"
++  },
++  {
++    "title": "Tripod #13",
++    "kind": "equipment",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "Drawing tablet #10",
++    "kind": "equipment",
++    "owner_email": "user08@example.com"
++  },
++  {
++    "title": "Illustrated Statistics Guide",
++    "kind": "book",
++    "owner_email": "user65@example.com"
++  },
++  {
++    "title": "USB-C hub #16",
++    "kind": "equipment",
++    "owner_email": "user57@example.com"
++  },
++  {
++    "title": "Drawing tablet #34",
++    "kind": "equipment",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Illustrated TypeScript Field Notes",
++    "kind": "book",
++    "owner_email": "user53@example.com"
++  },
++  {
++    "title": "Ring light #39",
++    "kind": "equipment",
++    "owner_email": "user07@example.com"
++  },
++  {
++    "title": "Ring light #22",
++    "kind": "equipment",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Concise Accessibility Field Notes",
++    "kind": "book",
++    "owner_email": "user37@example.com"
++  },
++  {
++    "title": "Applied Kubernetes Fundamentals",
++    "kind": "book",
++    "owner_email": "user11@example.com"
++  },
++  {
++    "title": "Essential Networking in Practice",
++    "kind": "book",
++    "owner_email": "user51@example.com"
++  },
++  {
++    "title": "Modern TypeScript Field Notes",
++    "kind": "book",
++    "owner_email": "user43@example.com"
++  },
++  {
++    "title": "Ring light #34",
++    "kind": "equipment",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Multimeter #33",
++    "kind": "equipment",
++    "owner_email": "user47@example.com"
++  },
++  {
++    "title": "Complete Kubernetes Patterns",
++    "kind": "book",
++    "owner_email": "user44@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #13",
++    "kind": "equipment",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Webcam #5",
++    "kind": "equipment",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Portable monitor #33",
++    "kind": "equipment",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Laser pointer #34",
++    "kind": "equipment",
++    "owner_email": "user05@example.com"
++  },
++  {
++    "title": "Laser pointer #40",
++    "kind": "equipment",
++    "owner_email": "user17@example.com"
++  },
++  {
++    "title": "Essential Kubernetes Cookbook",
++    "kind": "book",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Webcam #29",
++    "kind": "equipment",
++    "owner_email": "user06@example.com"
++  },
++  {
++    "title": "Advanced Security in Practice",
++    "kind": "book",
++    "owner_email": "user58@example.com"
++  },
++  {
++    "title": "Advanced TypeScript Primer",
++    "kind": "book",
++    "owner_email": "user25@example.com"
++  },
++  {
++    "title": "Applied Security Primer",
++    "kind": "book",
++    "owner_email": "user37@example.com"
++  },
++  {
++    "title": "Drawing tablet #34",
++    "kind": "equipment",
++    "owner_email": "user54@example.com"
++  },
++  {
++    "title": "Projector #13",
++    "kind": "equipment",
++    "owner_email": "user78@example.com"
++  },
++  {
++    "title": "Complete Postgres Primer",
++    "kind": "book",
++    "owner_email": "user48@example.com"
++  },
++  {
++    "title": "Modern Statistics Guide",
++    "kind": "book",
++    "owner_email": "user37@example.com"
++  },
++  {
++    "title": "Essential TypeScript Primer",
++    "kind": "book",
++    "owner_email": "user66@example.com"
++  },
++  {
++    "title": "Pocket Python Patterns",
++    "kind": "book",
++    "owner_email": "user58@example.com"
++  },
++  {
++    "title": "Laser pointer #2",
++    "kind": "equipment",
++    "owner_email": "user54@example.com"
++  },
++  {
++    "title": "Concise Networking Patterns",
++    "kind": "book",
++    "owner_email": "user50@example.com"
++  },
++  {
++    "title": "Soldering iron #15",
++    "kind": "equipment",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Modern Statistics Fundamentals",
++    "kind": "book",
++    "owner_email": "user19@example.com"
++  },
++  {
++    "title": "Complete Security Cookbook",
++    "kind": "book",
++    "owner_email": "user61@example.com"
++  },
++  {
++    "title": "Practical Python Handbook",
++    "kind": "book",
++    "owner_email": "user33@example.com"
++  },
++  {
++    "title": "Essential Design Field Notes",
++    "kind": "book",
++    "owner_email": "user15@example.com"
++  },
++  {
++    "title": "Conference speaker #20",
++    "kind": "equipment",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Pocket Accessibility Primer",
++    "kind": "book",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Field Testing Handbook",
++    "kind": "book",
++    "owner_email": "user66@example.com"
++  },
++  {
++    "title": "Essential TypeScript Field Notes",
++    "kind": "book",
++    "owner_email": "user01@example.com"
++  },
++  {
++    "title": "Conference speaker #37",
++    "kind": "equipment",
++    "owner_email": "user54@example.com"
++  },
++  {
++    "title": "Modern Design Fundamentals",
++    "kind": "book",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Drawing tablet #33",
++    "kind": "equipment",
++    "owner_email": "user65@example.com"
++  },
++  {
++    "title": "Pocket Security Handbook",
++    "kind": "book",
++    "owner_email": "user50@example.com"
++  },
++  {
++    "title": "Label printer #2",
++    "kind": "equipment",
++    "owner_email": "user46@example.com"
++  },
++  {
++    "title": "Soldering iron #16",
++    "kind": "equipment",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #22",
++    "kind": "equipment",
++    "owner_email": "user18@example.com"
++  },
++  {
++    "title": "Concise Networking Cookbook",
++    "kind": "book",
++    "owner_email": "user60@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #12",
++    "kind": "equipment",
++    "owner_email": "user18@example.com"
++  },
++  {
++    "title": "Field Postgres in Practice",
++    "kind": "book",
++    "owner_email": "user26@example.com"
++  },
++  {
++    "title": "Advanced Postgres Fundamentals",
++    "kind": "book",
++    "owner_email": "user40@example.com"
++  },
++  {
++    "title": "Concise Security in Practice",
++    "kind": "book",
++    "owner_email": "user05@example.com"
++  },
++  {
++    "title": "Conference speaker #19",
++    "kind": "equipment",
++    "owner_email": "user46@example.com"
++  },
++  {
++    "title": "USB-C hub #22",
++    "kind": "equipment",
++    "owner_email": "user35@example.com"
++  },
++  {
++    "title": "Illustrated Observability Field Notes",
++    "kind": "book",
++    "owner_email": "user57@example.com"
++  },
++  {
++    "title": "Multimeter #22",
++    "kind": "equipment",
++    "owner_email": "user24@example.com"
++  },
++  {
++    "title": "Field Networking in Practice",
++    "kind": "book",
++    "owner_email": "user11@example.com"
++  },
++  {
++    "title": "Portable monitor #28",
++    "kind": "equipment",
++    "owner_email": "user78@example.com"
++  },
++  {
++    "title": "Webcam #35",
++    "kind": "equipment",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Modern Networking in Practice",
++    "kind": "book",
++    "owner_email": "user40@example.com"
++  },
++  {
++    "title": "Pocket Kubernetes Primer",
++    "kind": "book",
++    "owner_email": "user45@example.com"
++  },
++  {
++    "title": "Illustrated Testing Field Notes",
++    "kind": "book",
++    "owner_email": "user36@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #4",
++    "kind": "equipment",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Multimeter #24",
++    "kind": "equipment",
++    "owner_email": "user66@example.com"
++  },
++  {
++    "title": "Ring light #11",
++    "kind": "equipment",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Applied Accessibility Primer",
++    "kind": "book",
++    "owner_email": "user05@example.com"
++  },
++  {
++    "title": "Advanced Accessibility Fundamentals",
++    "kind": "book",
++    "owner_email": "user47@example.com"
++  },
++  {
++    "title": "Applied Postgres Cookbook",
++    "kind": "book",
++    "owner_email": "user58@example.com"
++  },
++  {
++    "title": "Soldering iron #29",
++    "kind": "equipment",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Concise Networking Field Notes",
++    "kind": "book",
++    "owner_email": "user41@example.com"
++  },
++  {
++    "title": "Conference speaker #8",
++    "kind": "equipment",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #34",
++    "kind": "equipment",
++    "owner_email": "user50@example.com"
++  },
++  {
++    "title": "Portable monitor #17",
++    "kind": "equipment",
++    "owner_email": "user34@example.com"
++  },
++  {
++    "title": "Conference speaker #40",
++    "kind": "equipment",
++    "owner_email": "user37@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #13",
++    "kind": "equipment",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Modern Security Cookbook",
++    "kind": "book",
++    "owner_email": "user57@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #21",
++    "kind": "equipment",
++    "owner_email": "user45@example.com"
++  },
++  {
++    "title": "Drawing tablet #35",
++    "kind": "equipment",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Projector #11",
++    "kind": "equipment",
++    "owner_email": "user23@example.com"
++  },
++  {
++    "title": "Drawing tablet #15",
++    "kind": "equipment",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #9",
++    "kind": "equipment",
++    "owner_email": "user31@example.com"
++  },
++  {
++    "title": "USB-C hub #24",
++    "kind": "equipment",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Field Design Cookbook",
++    "kind": "book",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Portable monitor #20",
++    "kind": "equipment",
++    "owner_email": "user51@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #31",
++    "kind": "equipment",
++    "owner_email": "user68@example.com"
++  },
++  {
++    "title": "Pocket Testing Guide",
++    "kind": "book",
++    "owner_email": "user17@example.com"
++  },
++  {
++    "title": "Ring light #5",
++    "kind": "equipment",
++    "owner_email": "user58@example.com"
++  },
++  {
++    "title": "Concise Networking Cookbook",
++    "kind": "book",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Webcam #9",
++    "kind": "equipment",
++    "owner_email": "user56@example.com"
++  },
++  {
++    "title": "Practical Python Cookbook",
++    "kind": "book",
++    "owner_email": "user39@example.com"
++  },
++  {
++    "title": "Illustrated Statistics Patterns",
++    "kind": "book",
++    "owner_email": "user45@example.com"
++  },
++  {
++    "title": "Drawing tablet #19",
++    "kind": "equipment",
++    "owner_email": "user11@example.com"
++  },
++  {
++    "title": "Concise TypeScript Cookbook",
++    "kind": "book",
++    "owner_email": "user39@example.com"
++  },
++  {
++    "title": "Portable monitor #33",
++    "kind": "equipment",
++    "owner_email": "user22@example.com"
++  },
++  {
++    "title": "Applied Kubernetes Cookbook",
++    "kind": "book",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Tripod #22",
++    "kind": "equipment",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Practical Python Handbook",
++    "kind": "book",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Advanced Testing Field Notes",
++    "kind": "book",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #35",
++    "kind": "equipment",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Label printer #31",
++    "kind": "equipment",
++    "owner_email": "user32@example.com"
++  },
++  {
++    "title": "Ring light #26",
++    "kind": "equipment",
++    "owner_email": "user39@example.com"
++  },
++  {
++    "title": "Practical Kubernetes Primer",
++    "kind": "book",
++    "owner_email": "user54@example.com"
++  },
++  {
++    "title": "Advanced Networking Cookbook",
++    "kind": "book",
++    "owner_email": "user41@example.com"
++  },
++  {
++    "title": "Soldering iron #23",
++    "kind": "equipment",
++    "owner_email": "user52@example.com"
++  },
++  {
++    "title": "Illustrated Design Guide",
++    "kind": "book",
++    "owner_email": "user41@example.com"
++  },
++  {
++    "title": "Modern TypeScript Primer",
++    "kind": "book",
++    "owner_email": "user32@example.com"
++  },
++  {
++    "title": "Practical TypeScript Field Notes",
++    "kind": "book",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Essential Networking Fundamentals",
++    "kind": "book",
++    "owner_email": "user25@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #33",
++    "kind": "equipment",
++    "owner_email": "user60@example.com"
++  },
++  {
++    "title": "Complete Security Handbook",
++    "kind": "book",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Drawing tablet #30",
++    "kind": "equipment",
++    "owner_email": "user31@example.com"
++  },
++  {
++    "title": "Illustrated Postgres Handbook",
++    "kind": "book",
++    "owner_email": "user37@example.com"
++  },
++  {
++    "title": "Field TypeScript Handbook",
++    "kind": "book",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Complete Statistics Fundamentals",
++    "kind": "book",
++    "owner_email": "user52@example.com"
++  },
++  {
++    "title": "Pocket Postgres Patterns",
++    "kind": "book",
++    "owner_email": "user47@example.com"
++  },
++  {
++    "title": "Modern Observability Primer",
++    "kind": "book",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Applied Accessibility Guide",
++    "kind": "book",
++    "owner_email": "user17@example.com"
++  },
++  {
++    "title": "Multimeter #24",
++    "kind": "equipment",
++    "owner_email": "user44@example.com"
++  },
++  {
++    "title": "Illustrated Kubernetes Patterns",
++    "kind": "book",
++    "owner_email": "user78@example.com"
++  },
++  {
++    "title": "Concise Postgres Handbook",
++    "kind": "book",
++    "owner_email": "user05@example.com"
++  },
++  {
++    "title": "Illustrated Security Primer",
++    "kind": "book",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Drawing tablet #9",
++    "kind": "equipment",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "Soldering iron #11",
++    "kind": "equipment",
++    "owner_email": "user51@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #20",
++    "kind": "equipment",
++    "owner_email": "user76@example.com"
++  },
++  {
++    "title": "Concise Design Primer",
++    "kind": "book",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Practical Networking Fundamentals",
++    "kind": "book",
++    "owner_email": "user15@example.com"
++  },
++  {
++    "title": "Tripod #20",
++    "kind": "equipment",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Complete Accessibility Patterns",
++    "kind": "book",
++    "owner_email": "user07@example.com"
++  },
++  {
++    "title": "Essential Design Field Notes",
++    "kind": "book",
++    "owner_email": "user19@example.com"
++  },
++  {
++    "title": "Conference speaker #3",
++    "kind": "equipment",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Portable monitor #13",
++    "kind": "equipment",
++    "owner_email": "user03@example.com"
++  },
++  {
++    "title": "Pocket Kubernetes Field Notes",
++    "kind": "book",
++    "owner_email": "user27@example.com"
++  },
++  {
++    "title": "Applied Security Handbook",
++    "kind": "book",
++    "owner_email": "user18@example.com"
++  },
++  {
++    "title": "Concise Networking Primer",
++    "kind": "book",
++    "owner_email": "user68@example.com"
++  },
++  {
++    "title": "Essential Security Fundamentals",
++    "kind": "book",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Complete Testing Primer",
++    "kind": "book",
++    "owner_email": "user25@example.com"
++  },
++  {
++    "title": "Label printer #36",
++    "kind": "equipment",
++    "owner_email": "user39@example.com"
++  },
++  {
++    "title": "Complete TypeScript Patterns",
++    "kind": "book",
++    "owner_email": "user63@example.com"
++  },
++  {
++    "title": "Illustrated Design in Practice",
++    "kind": "book",
++    "owner_email": "user37@example.com"
++  },
++  {
++    "title": "Concise Observability Field Notes",
++    "kind": "book",
++    "owner_email": "user45@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #10",
++    "kind": "equipment",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Modern Networking Primer",
++    "kind": "book",
++    "owner_email": "user33@example.com"
++  },
++  {
++    "title": "Conference speaker #13",
++    "kind": "equipment",
++    "owner_email": "user69@example.com"
++  },
++  {
++    "title": "Concise Statistics in Practice",
++    "kind": "book",
++    "owner_email": "user18@example.com"
++  },
++  {
++    "title": "Applied Terraform Patterns",
++    "kind": "book",
++    "owner_email": "user07@example.com"
++  },
++  {
++    "title": "Drawing tablet #15",
++    "kind": "equipment",
++    "owner_email": "user30@example.com"
++  },
++  {
++    "title": "Pocket Networking Primer",
++    "kind": "book",
++    "owner_email": "user13@example.com"
++  },
++  {
++    "title": "Webcam #1",
++    "kind": "equipment",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Webcam #27",
++    "kind": "equipment",
++    "owner_email": "user61@example.com"
++  },
++  {
++    "title": "Advanced TypeScript Fundamentals",
++    "kind": "book",
++    "owner_email": "user37@example.com"
++  },
++  {
++    "title": "Laser pointer #6",
++    "kind": "equipment",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Practical Kubernetes Field Notes",
++    "kind": "book",
++    "owner_email": "user23@example.com"
++  },
++  {
++    "title": "USB-C hub #26",
++    "kind": "equipment",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Complete Postgres Handbook",
++    "kind": "book",
++    "owner_email": "user39@example.com"
++  },
++  {
++    "title": "Modern Networking in Practice",
++    "kind": "book",
++    "owner_email": "user59@example.com"
++  },
++  {
++    "title": "Drawing tablet #34",
++    "kind": "equipment",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Webcam #33",
++    "kind": "equipment",
++    "owner_email": "user60@example.com"
++  },
++  {
++    "title": "Modern Networking Cookbook",
++    "kind": "book",
++    "owner_email": "user59@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #12",
++    "kind": "equipment",
++    "owner_email": "user02@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #19",
++    "kind": "equipment",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Conference speaker #12",
++    "kind": "equipment",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Laser pointer #26",
++    "kind": "equipment",
++    "owner_email": "user55@example.com"
++  },
++  {
++    "title": "Modern Observability Guide",
++    "kind": "book",
++    "owner_email": "user24@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #21",
++    "kind": "equipment",
++    "owner_email": "user32@example.com"
++  },
++  {
++    "title": "Pocket Terraform Primer",
++    "kind": "book",
++    "owner_email": "user35@example.com"
++  },
++  {
++    "title": "Label printer #38",
++    "kind": "equipment",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Illustrated Statistics Patterns",
++    "kind": "book",
++    "owner_email": "user08@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #20",
++    "kind": "equipment",
++    "owner_email": "user21@example.com"
++  },
++  {
++    "title": "Concise Statistics in Practice",
++    "kind": "book",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Label printer #24",
++    "kind": "equipment",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Essential Security Cookbook",
++    "kind": "book",
++    "owner_email": "user59@example.com"
++  },
++  {
++    "title": "Tripod #24",
++    "kind": "equipment",
++    "owner_email": "user54@example.com"
++  },
++  {
++    "title": "Laser pointer #31",
++    "kind": "equipment",
++    "owner_email": "user69@example.com"
++  },
++  {
++    "title": "Projector #14",
++    "kind": "equipment",
++    "owner_email": "user32@example.com"
++  },
++  {
++    "title": "Tripod #6",
++    "kind": "equipment",
++    "owner_email": "user68@example.com"
++  },
++  {
++    "title": "Illustrated Python Guide",
++    "kind": "book",
++    "owner_email": "user08@example.com"
++  },
++  {
++    "title": "Laser pointer #33",
++    "kind": "equipment",
++    "owner_email": "user26@example.com"
++  },
++  {
++    "title": "Essential Kubernetes Fundamentals",
++    "kind": "book",
++    "owner_email": "user67@example.com"
++  },
++  {
++    "title": "Advanced Statistics Primer",
++    "kind": "book",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #4",
++    "kind": "equipment",
++    "owner_email": "user59@example.com"
++  },
++  {
++    "title": "Pocket Security Handbook",
++    "kind": "book",
++    "owner_email": "user72@example.com"
++  },
++  {
++    "title": "Complete Statistics Handbook",
++    "kind": "book",
++    "owner_email": "user51@example.com"
++  },
++  {
++    "title": "Practical Statistics Patterns",
++    "kind": "book",
++    "owner_email": "user75@example.com"
++  },
++  {
++    "title": "Pocket Networking Guide",
++    "kind": "book",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Laser pointer #5",
++    "kind": "equipment",
++    "owner_email": "user61@example.com"
++  },
++  {
++    "title": "Pocket Kubernetes Cookbook",
++    "kind": "book",
++    "owner_email": "user54@example.com"
++  },
++  {
++    "title": "Pocket Security Field Notes",
++    "kind": "book",
++    "owner_email": "user49@example.com"
++  },
++  {
++    "title": "Concise Kubernetes Fundamentals",
++    "kind": "book",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Concise Observability Cookbook",
++    "kind": "book",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #2",
++    "kind": "equipment",
++    "owner_email": "user39@example.com"
++  },
++  {
++    "title": "Concise Observability Field Notes",
++    "kind": "book",
++    "owner_email": "user30@example.com"
++  },
++  {
++    "title": "Illustrated Kubernetes in Practice",
++    "kind": "book",
++    "owner_email": "user25@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #8",
++    "kind": "equipment",
++    "owner_email": "user05@example.com"
++  },
++  {
++    "title": "Multimeter #40",
++    "kind": "equipment",
++    "owner_email": "user03@example.com"
++  },
++  {
++    "title": "Modern Python Handbook",
++    "kind": "book",
++    "owner_email": "user58@example.com"
++  },
++  {
++    "title": "Practical Terraform Handbook",
++    "kind": "book",
++    "owner_email": "user52@example.com"
++  },
++  {
++    "title": "Concise Terraform Handbook",
++    "kind": "book",
++    "owner_email": "user18@example.com"
++  },
++  {
++    "title": "Complete Terraform Fundamentals",
++    "kind": "book",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Illustrated Terraform in Practice",
++    "kind": "book",
++    "owner_email": "user19@example.com"
++  },
++  {
++    "title": "Drawing tablet #15",
++    "kind": "equipment",
++    "owner_email": "user53@example.com"
++  },
++  {
++    "title": "Practical Design Cookbook",
++    "kind": "book",
++    "owner_email": "user55@example.com"
++  },
++  {
++    "title": "Practical Networking Field Notes",
++    "kind": "book",
++    "owner_email": "user68@example.com"
++  },
++  {
++    "title": "Pocket Observability Cookbook",
++    "kind": "book",
++    "owner_email": "user39@example.com"
++  },
++  {
++    "title": "Concise Security Patterns",
++    "kind": "book",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Essential Security Handbook",
++    "kind": "book",
++    "owner_email": "user72@example.com"
++  },
++  {
++    "title": "Pocket Design Cookbook",
++    "kind": "book",
++    "owner_email": "user50@example.com"
++  },
++  {
++    "title": "Advanced Networking Guide",
++    "kind": "book",
++    "owner_email": "user58@example.com"
++  },
++  {
++    "title": "Portable monitor #35",
++    "kind": "equipment",
++    "owner_email": "user25@example.com"
++  },
++  {
++    "title": "Pocket Accessibility Handbook",
++    "kind": "book",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Applied Statistics Patterns",
++    "kind": "book",
++    "owner_email": "user62@example.com"
++  },
++  {
++    "title": "Illustrated TypeScript Handbook",
++    "kind": "book",
++    "owner_email": "user28@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #8",
++    "kind": "equipment",
++    "owner_email": "user62@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #39",
++    "kind": "equipment",
++    "owner_email": "user27@example.com"
++  },
++  {
++    "title": "Advanced Design Fundamentals",
++    "kind": "book",
++    "owner_email": "user37@example.com"
++  },
++  {
++    "title": "Concise Accessibility Fundamentals",
++    "kind": "book",
++    "owner_email": "user40@example.com"
++  },
++  {
++    "title": "Concise Security Primer",
++    "kind": "book",
++    "owner_email": "user13@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #31",
++    "kind": "equipment",
++    "owner_email": "user41@example.com"
++  },
++  {
++    "title": "Soldering iron #21",
++    "kind": "equipment",
++    "owner_email": "user53@example.com"
++  },
++  {
++    "title": "Advanced Statistics Cookbook",
++    "kind": "book",
++    "owner_email": "user03@example.com"
++  },
++  {
++    "title": "Applied Testing Field Notes",
++    "kind": "book",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Illustrated Terraform Field Notes",
++    "kind": "book",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #36",
++    "kind": "equipment",
++    "owner_email": "user44@example.com"
++  },
++  {
++    "title": "Field Statistics Primer",
++    "kind": "book",
++    "owner_email": "user59@example.com"
++  },
++  {
++    "title": "Illustrated Kubernetes Cookbook",
++    "kind": "book",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Concise Accessibility Handbook",
++    "kind": "book",
++    "owner_email": "user68@example.com"
++  },
++  {
++    "title": "Modern Accessibility Handbook",
++    "kind": "book",
++    "owner_email": "user01@example.com"
++  },
++  {
++    "title": "Advanced Python Cookbook",
++    "kind": "book",
++    "owner_email": "user02@example.com"
++  },
++  {
++    "title": "Field Networking Handbook",
++    "kind": "book",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Laser pointer #40",
++    "kind": "equipment",
++    "owner_email": "user62@example.com"
++  },
++  {
++    "title": "USB-C hub #1",
++    "kind": "equipment",
++    "owner_email": "user69@example.com"
++  },
++  {
++    "title": "Practical Postgres in Practice",
++    "kind": "book",
++    "owner_email": "user69@example.com"
++  },
++  {
++    "title": "USB-C hub #33",
++    "kind": "equipment",
++    "owner_email": "user56@example.com"
++  },
++  {
++    "title": "Laser pointer #12",
++    "kind": "equipment",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Drawing tablet #10",
++    "kind": "equipment",
++    "owner_email": "user31@example.com"
++  },
++  {
++    "title": "Concise TypeScript Fundamentals",
++    "kind": "book",
++    "owner_email": "user35@example.com"
++  },
++  {
++    "title": "Portable monitor #24",
++    "kind": "equipment",
++    "owner_email": "user52@example.com"
++  },
++  {
++    "title": "Advanced Statistics Patterns",
++    "kind": "book",
++    "owner_email": "user39@example.com"
++  },
++  {
++    "title": "Projector #6",
++    "kind": "equipment",
++    "owner_email": "user05@example.com"
++  },
++  {
++    "title": "Pocket Observability Primer",
++    "kind": "book",
++    "owner_email": "user08@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #11",
++    "kind": "equipment",
++    "owner_email": "user11@example.com"
++  },
++  {
++    "title": "Pocket Accessibility Fundamentals",
++    "kind": "book",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Portable monitor #34",
++    "kind": "equipment",
++    "owner_email": "user06@example.com"
++  },
++  {
++    "title": "Applied Security in Practice",
++    "kind": "book",
++    "owner_email": "user06@example.com"
++  },
++  {
++    "title": "Ring light #18",
++    "kind": "equipment",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Practical Kubernetes Fundamentals",
++    "kind": "book",
++    "owner_email": "user03@example.com"
++  },
++  {
++    "title": "Tripod #10",
++    "kind": "equipment",
++    "owner_email": "user51@example.com"
++  },
++  {
++    "title": "Label printer #11",
++    "kind": "equipment",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Pocket Accessibility Fundamentals",
++    "kind": "book",
++    "owner_email": "user50@example.com"
++  },
++  {
++    "title": "Webcam #6",
++    "kind": "equipment",
++    "owner_email": "user65@example.com"
++  },
++  {
++    "title": "Soldering iron #4",
++    "kind": "equipment",
++    "owner_email": "user13@example.com"
++  },
++  {
++    "title": "Modern Networking Field Notes",
++    "kind": "book",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "Complete Security Primer",
++    "kind": "book",
++    "owner_email": "user30@example.com"
++  },
++  {
++    "title": "Pocket Observability Cookbook",
++    "kind": "book",
++    "owner_email": "user75@example.com"
++  },
++  {
++    "title": "Portable monitor #40",
++    "kind": "equipment",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #5",
++    "kind": "equipment",
++    "owner_email": "user11@example.com"
++  },
++  {
++    "title": "Pocket Statistics Cookbook",
++    "kind": "book",
++    "owner_email": "user50@example.com"
++  },
++  {
++    "title": "Modern Python Handbook",
++    "kind": "book",
++    "owner_email": "user40@example.com"
++  },
++  {
++    "title": "Complete Python Cookbook",
++    "kind": "book",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Field Design Field Notes",
++    "kind": "book",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Illustrated Design Guide",
++    "kind": "book",
++    "owner_email": "user77@example.com"
++  },
++  {
++    "title": "Illustrated Observability Handbook",
++    "kind": "book",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Modern Statistics Patterns",
++    "kind": "book",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Pocket Kubernetes Cookbook",
++    "kind": "book",
++    "owner_email": "user35@example.com"
++  },
++  {
++    "title": "Field Kubernetes Guide",
++    "kind": "book",
++    "owner_email": "user22@example.com"
++  },
++  {
++    "title": "Pocket TypeScript Primer",
++    "kind": "book",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Advanced Statistics Primer",
++    "kind": "book",
++    "owner_email": "user77@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #7",
++    "kind": "equipment",
++    "owner_email": "user18@example.com"
++  },
++  {
++    "title": "Pocket Networking Field Notes",
++    "kind": "book",
++    "owner_email": "user43@example.com"
++  },
++  {
++    "title": "Pocket Accessibility Cookbook",
++    "kind": "book",
++    "owner_email": "user39@example.com"
++  },
++  {
++    "title": "Advanced Security Fundamentals",
++    "kind": "book",
++    "owner_email": "user23@example.com"
++  },
++  {
++    "title": "Soldering iron #19",
++    "kind": "equipment",
++    "owner_email": "user63@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #16",
++    "kind": "equipment",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "Pocket Networking Guide",
++    "kind": "book",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Concise Kubernetes Handbook",
++    "kind": "book",
++    "owner_email": "user60@example.com"
++  },
++  {
++    "title": "Conference speaker #29",
++    "kind": "equipment",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Portable monitor #27",
++    "kind": "equipment",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Complete Terraform in Practice",
++    "kind": "book",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #25",
++    "kind": "equipment",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Applied Security Field Notes",
++    "kind": "book",
++    "owner_email": "user69@example.com"
++  },
++  {
++    "title": "Pocket Design Handbook",
++    "kind": "book",
++    "owner_email": "user47@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #35",
++    "kind": "equipment",
++    "owner_email": "user77@example.com"
++  },
++  {
++    "title": "Portable monitor #7",
++    "kind": "equipment",
++    "owner_email": "user32@example.com"
++  },
++  {
++    "title": "Soldering iron #11",
++    "kind": "equipment",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Pocket Networking Field Notes",
++    "kind": "book",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Complete Terraform Patterns",
++    "kind": "book",
++    "owner_email": "user58@example.com"
++  },
++  {
++    "title": "Field Accessibility Cookbook",
++    "kind": "book",
++    "owner_email": "user45@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #7",
++    "kind": "equipment",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Modern Python Cookbook",
++    "kind": "book",
++    "owner_email": "user45@example.com"
++  },
++  {
++    "title": "Field Terraform Primer",
++    "kind": "book",
++    "owner_email": "user45@example.com"
++  },
++  {
++    "title": "Field Statistics Primer",
++    "kind": "book",
++    "owner_email": "user41@example.com"
++  },
++  {
++    "title": "Practical Statistics Guide",
++    "kind": "book",
++    "owner_email": "user03@example.com"
++  },
++  {
++    "title": "Ring light #7",
++    "kind": "equipment",
++    "owner_email": "user22@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #16",
++    "kind": "equipment",
++    "owner_email": "user67@example.com"
++  },
++  {
++    "title": "Essential Networking Field Notes",
++    "kind": "book",
++    "owner_email": "user60@example.com"
++  },
++  {
++    "title": "Pocket Accessibility Cookbook",
++    "kind": "book",
++    "owner_email": "user24@example.com"
++  },
++  {
++    "title": "Multimeter #26",
++    "kind": "equipment",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Laser pointer #13",
++    "kind": "equipment",
++    "owner_email": "user58@example.com"
++  },
++  {
++    "title": "Pocket Postgres Patterns",
++    "kind": "book",
++    "owner_email": "user27@example.com"
++  },
++  {
++    "title": "Modern Testing Guide",
++    "kind": "book",
++    "owner_email": "user69@example.com"
++  },
++  {
++    "title": "Illustrated Terraform Primer",
++    "kind": "book",
++    "owner_email": "user15@example.com"
++  },
++  {
++    "title": "Field Design Fundamentals",
++    "kind": "book",
++    "owner_email": "user77@example.com"
++  },
++  {
++    "title": "Pocket Testing Guide",
++    "kind": "book",
++    "owner_email": "user45@example.com"
++  },
++  {
++    "title": "Field Testing Cookbook",
++    "kind": "book",
++    "owner_email": "user39@example.com"
++  },
++  {
++    "title": "Tripod #6",
++    "kind": "equipment",
++    "owner_email": "user18@example.com"
++  },
++  {
++    "title": "Advanced TypeScript Guide",
++    "kind": "book",
++    "owner_email": "user24@example.com"
++  },
++  {
++    "title": "Essential Design Field Notes",
++    "kind": "book",
++    "owner_email": "user54@example.com"
++  },
++  {
++    "title": "Applied Observability Field Notes",
++    "kind": "book",
++    "owner_email": "user24@example.com"
++  },
++  {
++    "title": "Concise Statistics Cookbook",
++    "kind": "book",
++    "owner_email": "user72@example.com"
++  },
++  {
++    "title": "Complete Kubernetes Cookbook",
++    "kind": "book",
++    "owner_email": "user41@example.com"
++  },
++  {
++    "title": "Tripod #4",
++    "kind": "equipment",
++    "owner_email": "user46@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #9",
++    "kind": "equipment",
++    "owner_email": "user25@example.com"
++  },
++  {
++    "title": "Drawing tablet #33",
++    "kind": "equipment",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Field Observability Primer",
++    "kind": "book",
++    "owner_email": "user63@example.com"
++  },
++  {
++    "title": "Applied Postgres Patterns",
++    "kind": "book",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Advanced Design in Practice",
++    "kind": "book",
++    "owner_email": "user22@example.com"
++  },
++  {
++    "title": "Tripod #32",
++    "kind": "equipment",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Applied Python in Practice",
++    "kind": "book",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Soldering iron #35",
++    "kind": "equipment",
++    "owner_email": "user06@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #35",
++    "kind": "equipment",
++    "owner_email": "user28@example.com"
++  },
++  {
++    "title": "Portable monitor #16",
++    "kind": "equipment",
++    "owner_email": "user39@example.com"
++  },
++  {
++    "title": "USB-C hub #29",
++    "kind": "equipment",
++    "owner_email": "user34@example.com"
++  },
++  {
++    "title": "Modern Security Guide",
++    "kind": "book",
++    "owner_email": "user31@example.com"
++  },
++  {
++    "title": "Applied Statistics Fundamentals",
++    "kind": "book",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Webcam #40",
++    "kind": "equipment",
++    "owner_email": "user18@example.com"
++  },
++  {
++    "title": "Projector #14",
++    "kind": "equipment",
++    "owner_email": "user08@example.com"
++  },
++  {
++    "title": "Concise TypeScript Cookbook",
++    "kind": "book",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "Label printer #19",
++    "kind": "equipment",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Concise Accessibility Guide",
++    "kind": "book",
++    "owner_email": "user18@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #27",
++    "kind": "equipment",
++    "owner_email": "user08@example.com"
++  },
++  {
++    "title": "Projector #9",
++    "kind": "equipment",
++    "owner_email": "user17@example.com"
++  },
++  {
++    "title": "Illustrated Terraform Field Notes",
++    "kind": "book",
++    "owner_email": "user63@example.com"
++  },
++  {
++    "title": "Complete Accessibility Field Notes",
++    "kind": "book",
++    "owner_email": "user49@example.com"
++  },
++  {
++    "title": "Modern Observability in Practice",
++    "kind": "book",
++    "owner_email": "user48@example.com"
++  },
++  {
++    "title": "Field Networking Handbook",
++    "kind": "book",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #23",
++    "kind": "equipment",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Multimeter #14",
++    "kind": "equipment",
++    "owner_email": "user55@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #18",
++    "kind": "equipment",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "Soldering iron #36",
++    "kind": "equipment",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Field Networking Handbook",
++    "kind": "book",
++    "owner_email": "user06@example.com"
++  },
++  {
++    "title": "Field Postgres Guide",
++    "kind": "book",
++    "owner_email": "user21@example.com"
++  },
++  {
++    "title": "Practical Observability Patterns",
++    "kind": "book",
++    "owner_email": "user17@example.com"
++  },
++  {
++    "title": "Label printer #11",
++    "kind": "equipment",
++    "owner_email": "user36@example.com"
++  },
++  {
++    "title": "Illustrated TypeScript Guide",
++    "kind": "book",
++    "owner_email": "user48@example.com"
++  },
++  {
++    "title": "Ring light #11",
++    "kind": "equipment",
++    "owner_email": "user07@example.com"
++  },
++  {
++    "title": "Complete Statistics Patterns",
++    "kind": "book",
++    "owner_email": "user55@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #7",
++    "kind": "equipment",
++    "owner_email": "user01@example.com"
++  },
++  {
++    "title": "Modern Kubernetes Patterns",
++    "kind": "book",
++    "owner_email": "user67@example.com"
++  },
++  {
++    "title": "USB-C hub #1",
++    "kind": "equipment",
++    "owner_email": "user44@example.com"
++  },
++  {
++    "title": "Projector #28",
++    "kind": "equipment",
++    "owner_email": "user17@example.com"
++  },
++  {
++    "title": "Advanced Observability Guide",
++    "kind": "book",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Illustrated TypeScript Cookbook",
++    "kind": "book",
++    "owner_email": "user49@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #9",
++    "kind": "equipment",
++    "owner_email": "user19@example.com"
++  },
++  {
++    "title": "Applied Postgres Cookbook",
++    "kind": "book",
++    "owner_email": "user57@example.com"
++  },
++  {
++    "title": "Advanced Accessibility Cookbook",
++    "kind": "book",
++    "owner_email": "user53@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #14",
++    "kind": "equipment",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Webcam #8",
++    "kind": "equipment",
++    "owner_email": "user76@example.com"
++  },
++  {
++    "title": "Soldering iron #28",
++    "kind": "equipment",
++    "owner_email": "user41@example.com"
++  },
++  {
++    "title": "Conference speaker #18",
++    "kind": "equipment",
++    "owner_email": "user11@example.com"
++  },
++  {
++    "title": "Applied Testing in Practice",
++    "kind": "book",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Ring light #20",
++    "kind": "equipment",
++    "owner_email": "user27@example.com"
++  },
++  {
++    "title": "Concise Terraform Field Notes",
++    "kind": "book",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #16",
++    "kind": "equipment",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Advanced Security Guide",
++    "kind": "book",
++    "owner_email": "user68@example.com"
++  },
++  {
++    "title": "USB-C hub #24",
++    "kind": "equipment",
++    "owner_email": "user41@example.com"
++  },
++  {
++    "title": "Applied Observability Fundamentals",
++    "kind": "book",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #31",
++    "kind": "equipment",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Modern Postgres in Practice",
++    "kind": "book",
++    "owner_email": "user28@example.com"
++  },
++  {
++    "title": "Practical Observability in Practice",
++    "kind": "book",
++    "owner_email": "user65@example.com"
++  },
++  {
++    "title": "Multimeter #26",
++    "kind": "equipment",
++    "owner_email": "user11@example.com"
++  },
++  {
++    "title": "Drawing tablet #40",
++    "kind": "equipment",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Complete Python Patterns",
++    "kind": "book",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Pocket Testing Guide",
++    "kind": "book",
++    "owner_email": "user40@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #16",
++    "kind": "equipment",
++    "owner_email": "user08@example.com"
++  },
++  {
++    "title": "Pocket Python Primer",
++    "kind": "book",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Label printer #12",
++    "kind": "equipment",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Essential Statistics Handbook",
++    "kind": "book",
++    "owner_email": "user21@example.com"
++  },
++  {
++    "title": "Illustrated Design in Practice",
++    "kind": "book",
++    "owner_email": "user22@example.com"
++  },
++  {
++    "title": "Complete Statistics Guide",
++    "kind": "book",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Pocket TypeScript Guide",
++    "kind": "book",
++    "owner_email": "user34@example.com"
++  },
++  {
++    "title": "Tripod #5",
++    "kind": "equipment",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Illustrated Postgres Primer",
++    "kind": "book",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Essential TypeScript Guide",
++    "kind": "book",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Portable monitor #15",
++    "kind": "equipment",
++    "owner_email": "user66@example.com"
++  },
++  {
++    "title": "Practical Terraform Handbook",
++    "kind": "book",
++    "owner_email": "user61@example.com"
++  },
++  {
++    "title": "Essential Kubernetes Handbook",
++    "kind": "book",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #27",
++    "kind": "equipment",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Pocket Statistics Fundamentals",
++    "kind": "book",
++    "owner_email": "user35@example.com"
++  },
++  {
++    "title": "Tripod #24",
++    "kind": "equipment",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Practical Kubernetes Patterns",
++    "kind": "book",
++    "owner_email": "user67@example.com"
++  },
++  {
++    "title": "Multimeter #5",
++    "kind": "equipment",
++    "owner_email": "user60@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #20",
++    "kind": "equipment",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "Field Postgres Fundamentals",
++    "kind": "book",
++    "owner_email": "user26@example.com"
++  },
++  {
++    "title": "Complete Statistics Patterns",
++    "kind": "book",
++    "owner_email": "user60@example.com"
++  },
++  {
++    "title": "Field Terraform Patterns",
++    "kind": "book",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Pocket Postgres Patterns",
++    "kind": "book",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Practical Networking Handbook",
++    "kind": "book",
++    "owner_email": "user49@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #20",
++    "kind": "equipment",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Advanced Observability Primer",
++    "kind": "book",
++    "owner_email": "user08@example.com"
++  },
++  {
++    "title": "Webcam #18",
++    "kind": "equipment",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Advanced Design Field Notes",
++    "kind": "book",
++    "owner_email": "user48@example.com"
++  },
++  {
++    "title": "Modern Testing Guide",
++    "kind": "book",
++    "owner_email": "user65@example.com"
++  },
++  {
++    "title": "Pocket Python Handbook",
++    "kind": "book",
++    "owner_email": "user56@example.com"
++  },
++  {
++    "title": "Webcam #16",
++    "kind": "equipment",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Illustrated Observability Fundamentals",
++    "kind": "book",
++    "owner_email": "user41@example.com"
++  },
++  {
++    "title": "Advanced Python Patterns",
++    "kind": "book",
++    "owner_email": "user18@example.com"
++  },
++  {
++    "title": "Tripod #7",
++    "kind": "equipment",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Field Security Fundamentals",
++    "kind": "book",
++    "owner_email": "user53@example.com"
++  },
++  {
++    "title": "Illustrated Terraform Primer",
++    "kind": "book",
++    "owner_email": "user40@example.com"
++  },
++  {
++    "title": "Modern Python Cookbook",
++    "kind": "book",
++    "owner_email": "user39@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #39",
++    "kind": "equipment",
++    "owner_email": "user06@example.com"
++  },
++  {
++    "title": "Illustrated Kubernetes Guide",
++    "kind": "book",
++    "owner_email": "user32@example.com"
++  },
++  {
++    "title": "Multimeter #33",
++    "kind": "equipment",
++    "owner_email": "user07@example.com"
++  },
++  {
++    "title": "Label printer #12",
++    "kind": "equipment",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Projector #29",
++    "kind": "equipment",
++    "owner_email": "user72@example.com"
++  },
++  {
++    "title": "Conference speaker #7",
++    "kind": "equipment",
++    "owner_email": "user60@example.com"
++  },
++  {
++    "title": "Essential Python Handbook",
++    "kind": "book",
++    "owner_email": "user08@example.com"
++  },
++  {
++    "title": "Conference speaker #9",
++    "kind": "equipment",
++    "owner_email": "user26@example.com"
++  },
++  {
++    "title": "Soldering iron #6",
++    "kind": "equipment",
++    "owner_email": "user75@example.com"
++  },
++  {
++    "title": "Modern Postgres Guide",
++    "kind": "book",
++    "owner_email": "user26@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #9",
++    "kind": "equipment",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Projector #22",
++    "kind": "equipment",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Field Postgres Cookbook",
++    "kind": "book",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Pocket Security Handbook",
++    "kind": "book",
++    "owner_email": "user49@example.com"
++  },
++  {
++    "title": "Webcam #23",
++    "kind": "equipment",
++    "owner_email": "user28@example.com"
++  },
++  {
++    "title": "Label printer #18",
++    "kind": "equipment",
++    "owner_email": "user58@example.com"
++  },
++  {
++    "title": "USB-C hub #40",
++    "kind": "equipment",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Ring light #19",
++    "kind": "equipment",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Concise Security Handbook",
++    "kind": "book",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Essential Observability Patterns",
++    "kind": "book",
++    "owner_email": "user68@example.com"
++  },
++  {
++    "title": "Concise Postgres Field Notes",
++    "kind": "book",
++    "owner_email": "user46@example.com"
++  },
++  {
++    "title": "Field Networking Fundamentals",
++    "kind": "book",
++    "owner_email": "user50@example.com"
++  },
++  {
++    "title": "Practical Networking Patterns",
++    "kind": "book",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #18",
++    "kind": "equipment",
++    "owner_email": "user08@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #34",
++    "kind": "equipment",
++    "owner_email": "user46@example.com"
++  },
++  {
++    "title": "Conference speaker #11",
++    "kind": "equipment",
++    "owner_email": "user13@example.com"
++  },
++  {
++    "title": "Advanced TypeScript Handbook",
++    "kind": "book",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Pocket Networking Cookbook",
++    "kind": "book",
++    "owner_email": "user23@example.com"
++  },
++  {
++    "title": "Illustrated Statistics Fundamentals",
++    "kind": "book",
++    "owner_email": "user76@example.com"
++  },
++  {
++    "title": "Illustrated Testing Cookbook",
++    "kind": "book",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Projector #32",
++    "kind": "equipment",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "Field Postgres Guide",
++    "kind": "book",
++    "owner_email": "user08@example.com"
++  },
++  {
++    "title": "Advanced Postgres Primer",
++    "kind": "book",
++    "owner_email": "user01@example.com"
++  },
++  {
++    "title": "Applied Terraform Cookbook",
++    "kind": "book",
++    "owner_email": "user44@example.com"
++  },
++  {
++    "title": "Laser pointer #21",
++    "kind": "equipment",
++    "owner_email": "user08@example.com"
++  },
++  {
++    "title": "Applied Statistics Cookbook",
++    "kind": "book",
++    "owner_email": "user15@example.com"
++  },
++  {
++    "title": "Projector #24",
++    "kind": "equipment",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Pocket Testing Guide",
++    "kind": "book",
++    "owner_email": "user44@example.com"
++  },
++  {
++    "title": "Essential Kubernetes Field Notes",
++    "kind": "book",
++    "owner_email": "user63@example.com"
++  },
++  {
++    "title": "Webcam #36",
++    "kind": "equipment",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Conference speaker #38",
++    "kind": "equipment",
++    "owner_email": "user23@example.com"
++  },
++  {
++    "title": "Complete Kubernetes Cookbook",
++    "kind": "book",
++    "owner_email": "user01@example.com"
++  },
++  {
++    "title": "Tripod #26",
++    "kind": "equipment",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Applied Networking Patterns",
++    "kind": "book",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Field Kubernetes Fundamentals",
++    "kind": "book",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Illustrated Kubernetes Guide",
++    "kind": "book",
++    "owner_email": "user43@example.com"
++  },
++  {
++    "title": "Complete Terraform Patterns",
++    "kind": "book",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Modern Statistics Handbook",
++    "kind": "book",
++    "owner_email": "user07@example.com"
++  },
++  {
++    "title": "Pocket Kubernetes Field Notes",
++    "kind": "book",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Soldering iron #35",
++    "kind": "equipment",
++    "owner_email": "user49@example.com"
++  },
++  {
++    "title": "Field Testing Patterns",
++    "kind": "book",
++    "owner_email": "user21@example.com"
++  },
++  {
++    "title": "Practical TypeScript Handbook",
++    "kind": "book",
++    "owner_email": "user41@example.com"
++  },
++  {
++    "title": "Modern Python Fundamentals",
++    "kind": "book",
++    "owner_email": "user22@example.com"
++  },
++  {
++    "title": "Webcam #5",
++    "kind": "equipment",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Portable monitor #22",
++    "kind": "equipment",
++    "owner_email": "user77@example.com"
++  },
++  {
++    "title": "Laser pointer #31",
++    "kind": "equipment",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Essential Testing Field Notes",
++    "kind": "book",
++    "owner_email": "user21@example.com"
++  },
++  {
++    "title": "Illustrated Terraform Patterns",
++    "kind": "book",
++    "owner_email": "user53@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #35",
++    "kind": "equipment",
++    "owner_email": "user34@example.com"
++  },
++  {
++    "title": "Label printer #16",
++    "kind": "equipment",
++    "owner_email": "user13@example.com"
++  },
++  {
++    "title": "Applied Design Primer",
++    "kind": "book",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Practical Observability Guide",
++    "kind": "book",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Ring light #39",
++    "kind": "equipment",
++    "owner_email": "user62@example.com"
++  },
++  {
++    "title": "Practical Terraform Cookbook",
++    "kind": "book",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #8",
++    "kind": "equipment",
++    "owner_email": "user40@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #32",
++    "kind": "equipment",
++    "owner_email": "user34@example.com"
++  },
++  {
++    "title": "Concise Observability Cookbook",
++    "kind": "book",
++    "owner_email": "user48@example.com"
++  },
++  {
++    "title": "Soldering iron #12",
++    "kind": "equipment",
++    "owner_email": "user58@example.com"
++  },
++  {
++    "title": "Field Security in Practice",
++    "kind": "book",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Tripod #4",
++    "kind": "equipment",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Ring light #7",
++    "kind": "equipment",
++    "owner_email": "user11@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #35",
++    "kind": "equipment",
++    "owner_email": "user53@example.com"
++  },
++  {
++    "title": "Tripod #15",
++    "kind": "equipment",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Pocket Design Field Notes",
++    "kind": "book",
++    "owner_email": "user69@example.com"
++  },
++  {
++    "title": "Laser pointer #31",
++    "kind": "equipment",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #20",
++    "kind": "equipment",
++    "owner_email": "user11@example.com"
++  },
++  {
++    "title": "Practical Design Cookbook",
++    "kind": "book",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #12",
++    "kind": "equipment",
++    "owner_email": "user22@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #13",
++    "kind": "equipment",
++    "owner_email": "user17@example.com"
++  },
++  {
++    "title": "Modern Accessibility Field Notes",
++    "kind": "book",
++    "owner_email": "user26@example.com"
++  },
++  {
++    "title": "Ring light #10",
++    "kind": "equipment",
++    "owner_email": "user77@example.com"
++  },
++  {
++    "title": "Modern Python Field Notes",
++    "kind": "book",
++    "owner_email": "user72@example.com"
++  },
++  {
++    "title": "Illustrated TypeScript Primer",
++    "kind": "book",
++    "owner_email": "user02@example.com"
++  },
++  {
++    "title": "Tripod #38",
++    "kind": "equipment",
++    "owner_email": "user67@example.com"
++  },
++  {
++    "title": "Portable monitor #27",
++    "kind": "equipment",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Applied Testing Guide",
++    "kind": "book",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Modern TypeScript Fundamentals",
++    "kind": "book",
++    "owner_email": "user53@example.com"
++  },
++  {
++    "title": "Field Testing Primer",
++    "kind": "book",
++    "owner_email": "user05@example.com"
++  },
++  {
++    "title": "Pocket Kubernetes Field Notes",
++    "kind": "book",
++    "owner_email": "user05@example.com"
++  },
++  {
++    "title": "Illustrated Statistics Patterns",
++    "kind": "book",
++    "owner_email": "user07@example.com"
++  },
++  {
++    "title": "Laser pointer #18",
++    "kind": "equipment",
++    "owner_email": "user48@example.com"
++  },
++  {
++    "title": "Complete TypeScript in Practice",
++    "kind": "book",
++    "owner_email": "user63@example.com"
++  },
++  {
++    "title": "Ring light #7",
++    "kind": "equipment",
++    "owner_email": "user30@example.com"
++  },
++  {
++    "title": "Field Networking in Practice",
++    "kind": "book",
++    "owner_email": "user54@example.com"
++  },
++  {
++    "title": "Portable monitor #13",
++    "kind": "equipment",
++    "owner_email": "user57@example.com"
++  },
++  {
++    "title": "Pocket Statistics Primer",
++    "kind": "book",
++    "owner_email": "user67@example.com"
++  },
++  {
++    "title": "Projector #4",
++    "kind": "equipment",
++    "owner_email": "user66@example.com"
++  },
++  {
++    "title": "Portable monitor #20",
++    "kind": "equipment",
++    "owner_email": "user65@example.com"
++  },
++  {
++    "title": "Concise Testing Handbook",
++    "kind": "book",
++    "owner_email": "user23@example.com"
++  },
++  {
++    "title": "Advanced Postgres Patterns",
++    "kind": "book",
++    "owner_email": "user05@example.com"
++  },
++  {
++    "title": "Illustrated Statistics Patterns",
++    "kind": "book",
++    "owner_email": "user36@example.com"
++  },
++  {
++    "title": "Field Design Field Notes",
++    "kind": "book",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Conference speaker #24",
++    "kind": "equipment",
++    "owner_email": "user63@example.com"
++  },
++  {
++    "title": "Essential Security Fundamentals",
++    "kind": "book",
++    "owner_email": "user45@example.com"
++  },
++  {
++    "title": "Complete Statistics Guide",
++    "kind": "book",
++    "owner_email": "user37@example.com"
++  },
++  {
++    "title": "Practical Kubernetes Patterns",
++    "kind": "book",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Ring light #14",
++    "kind": "equipment",
++    "owner_email": "user35@example.com"
++  },
++  {
++    "title": "Drawing tablet #2",
++    "kind": "equipment",
++    "owner_email": "user02@example.com"
++  },
++  {
++    "title": "Essential Accessibility Cookbook",
++    "kind": "book",
++    "owner_email": "user77@example.com"
++  },
++  {
++    "title": "Conference speaker #17",
++    "kind": "equipment",
++    "owner_email": "user78@example.com"
++  },
++  {
++    "title": "Label printer #18",
++    "kind": "equipment",
++    "owner_email": "user55@example.com"
++  },
++  {
++    "title": "Projector #23",
++    "kind": "equipment",
++    "owner_email": "user59@example.com"
++  },
++  {
++    "title": "Field TypeScript Field Notes",
++    "kind": "book",
++    "owner_email": "user75@example.com"
++  },
++  {
++    "title": "Concise Accessibility Fundamentals",
++    "kind": "book",
++    "owner_email": "user72@example.com"
++  },
++  {
++    "title": "Tripod #19",
++    "kind": "equipment",
++    "owner_email": "user39@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #5",
++    "kind": "equipment",
++    "owner_email": "user44@example.com"
++  },
++  {
++    "title": "Ring light #21",
++    "kind": "equipment",
++    "owner_email": "user36@example.com"
++  },
++  {
++    "title": "Complete Terraform Cookbook",
++    "kind": "book",
++    "owner_email": "user67@example.com"
++  },
++  {
++    "title": "Laser pointer #4",
++    "kind": "equipment",
++    "owner_email": "user77@example.com"
++  },
++  {
++    "title": "Illustrated Accessibility Cookbook",
++    "kind": "book",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Label printer #17",
++    "kind": "equipment",
++    "owner_email": "user54@example.com"
++  },
++  {
++    "title": "Practical Testing Patterns",
++    "kind": "book",
++    "owner_email": "user44@example.com"
++  },
++  {
++    "title": "Conference speaker #35",
++    "kind": "equipment",
++    "owner_email": "user61@example.com"
++  },
++  {
++    "title": "Ring light #23",
++    "kind": "equipment",
++    "owner_email": "user65@example.com"
++  },
++  {
++    "title": "Essential Accessibility Cookbook",
++    "kind": "book",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Essential Statistics in Practice",
++    "kind": "book",
++    "owner_email": "user72@example.com"
++  },
++  {
++    "title": "Webcam #22",
++    "kind": "equipment",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Advanced Statistics in Practice",
++    "kind": "book",
++    "owner_email": "user54@example.com"
++  },
++  {
++    "title": "Soldering iron #24",
++    "kind": "equipment",
++    "owner_email": "user34@example.com"
++  },
++  {
++    "title": "Field Python Primer",
++    "kind": "book",
++    "owner_email": "user07@example.com"
++  },
++  {
++    "title": "Tripod #38",
++    "kind": "equipment",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Advanced Design Guide",
++    "kind": "book",
++    "owner_email": "user49@example.com"
++  },
++  {
++    "title": "Pocket Postgres Cookbook",
++    "kind": "book",
++    "owner_email": "user18@example.com"
++  },
++  {
++    "title": "Soldering iron #27",
++    "kind": "equipment",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #10",
++    "kind": "equipment",
++    "owner_email": "user41@example.com"
++  },
++  {
++    "title": "Webcam #6",
++    "kind": "equipment",
++    "owner_email": "user63@example.com"
++  },
++  {
++    "title": "Essential Networking Handbook",
++    "kind": "book",
++    "owner_email": "user01@example.com"
++  },
++  {
++    "title": "Advanced Kubernetes Cookbook",
++    "kind": "book",
++    "owner_email": "user63@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #6",
++    "kind": "equipment",
++    "owner_email": "user17@example.com"
++  },
++  {
++    "title": "Ring light #28",
++    "kind": "equipment",
++    "owner_email": "user52@example.com"
++  },
++  {
++    "title": "Field Observability Handbook",
++    "kind": "book",
++    "owner_email": "user05@example.com"
++  },
++  {
++    "title": "Illustrated Postgres Fundamentals",
++    "kind": "book",
++    "owner_email": "user68@example.com"
++  },
++  {
++    "title": "Practical Accessibility Patterns",
++    "kind": "book",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Soldering iron #20",
++    "kind": "equipment",
++    "owner_email": "user17@example.com"
++  },
++  {
++    "title": "Concise Testing in Practice",
++    "kind": "book",
++    "owner_email": "user22@example.com"
++  },
++  {
++    "title": "Practical TypeScript in Practice",
++    "kind": "book",
++    "owner_email": "user59@example.com"
++  },
++  {
++    "title": "Tripod #34",
++    "kind": "equipment",
++    "owner_email": "user44@example.com"
++  },
++  {
++    "title": "Essential Networking Primer",
++    "kind": "book",
++    "owner_email": "user46@example.com"
++  },
++  {
++    "title": "Webcam #26",
++    "kind": "equipment",
++    "owner_email": "user03@example.com"
++  },
++  {
++    "title": "Essential Terraform Handbook",
++    "kind": "book",
++    "owner_email": "user76@example.com"
++  },
++  {
++    "title": "Modern Networking Handbook",
++    "kind": "book",
++    "owner_email": "user49@example.com"
++  },
++  {
++    "title": "Label printer #35",
++    "kind": "equipment",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Practical Accessibility Guide",
++    "kind": "book",
++    "owner_email": "user03@example.com"
++  },
++  {
++    "title": "Modern Observability Primer",
++    "kind": "book",
++    "owner_email": "user49@example.com"
++  },
++  {
++    "title": "Complete Security Cookbook",
++    "kind": "book",
++    "owner_email": "user27@example.com"
++  },
++  {
++    "title": "Ring light #1",
++    "kind": "equipment",
++    "owner_email": "user39@example.com"
++  },
++  {
++    "title": "Modern Accessibility in Practice",
++    "kind": "book",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Webcam #27",
++    "kind": "equipment",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Applied Python in Practice",
++    "kind": "book",
++    "owner_email": "user15@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #13",
++    "kind": "equipment",
++    "owner_email": "user78@example.com"
++  },
++  {
++    "title": "Complete Design Patterns",
++    "kind": "book",
++    "owner_email": "user46@example.com"
++  },
++  {
++    "title": "Label printer #11",
++    "kind": "equipment",
++    "owner_email": "user06@example.com"
++  },
++  {
++    "title": "Advanced Statistics Primer",
++    "kind": "book",
++    "owner_email": "user43@example.com"
++  },
++  {
++    "title": "Practical Accessibility Guide",
++    "kind": "book",
++    "owner_email": "user15@example.com"
++  },
++  {
++    "title": "Ring light #32",
++    "kind": "equipment",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Noise-cancelling headset #33",
++    "kind": "equipment",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Portable monitor #17",
++    "kind": "equipment",
++    "owner_email": "user30@example.com"
++  },
++  {
++    "title": "Complete TypeScript Primer",
++    "kind": "book",
++    "owner_email": "user07@example.com"
++  },
++  {
++    "title": "Essential Postgres in Practice",
++    "kind": "book",
++    "owner_email": "user47@example.com"
++  },
++  {
++    "title": "Soldering iron #28",
++    "kind": "equipment",
++    "owner_email": "user15@example.com"
++  },
++  {
++    "title": "Practical Postgres Cookbook",
++    "kind": "book",
++    "owner_email": "user22@example.com"
++  },
++  {
++    "title": "Field Testing in Practice",
++    "kind": "book",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Illustrated Kubernetes Guide",
++    "kind": "book",
++    "owner_email": "user52@example.com"
++  },
++  {
++    "title": "Field TypeScript Field Notes",
++    "kind": "book",
++    "owner_email": "user62@example.com"
++  },
++  {
++    "title": "Ring light #11",
++    "kind": "equipment",
++    "owner_email": "user15@example.com"
++  },
++  {
++    "title": "Practical Kubernetes Guide",
++    "kind": "book",
++    "owner_email": "user54@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #37",
++    "kind": "equipment",
++    "owner_email": "user57@example.com"
++  },
++  {
++    "title": "Pocket Networking Handbook",
++    "kind": "book",
++    "owner_email": "user17@example.com"
++  },
++  {
++    "title": "Field Python Field Notes",
++    "kind": "book",
++    "owner_email": "user57@example.com"
++  },
++  {
++    "title": "Complete Accessibility Fundamentals",
++    "kind": "book",
++    "owner_email": "user02@example.com"
++  },
++  {
++    "title": "Ring light #34",
++    "kind": "equipment",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Conference speaker #22",
++    "kind": "equipment",
++    "owner_email": "user67@example.com"
++  },
++  {
++    "title": "Applied Python Field Notes",
++    "kind": "book",
++    "owner_email": "user32@example.com"
++  },
++  {
++    "title": "Pocket Kubernetes Handbook",
++    "kind": "book",
++    "owner_email": "user02@example.com"
++  },
++  {
++    "title": "Webcam #33",
++    "kind": "equipment",
++    "owner_email": "user61@example.com"
++  },
++  {
++    "title": "Projector #11",
++    "kind": "equipment",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Soldering iron #16",
++    "kind": "equipment",
++    "owner_email": "user43@example.com"
++  },
++  {
++    "title": "USB-C hub #33",
++    "kind": "equipment",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Pocket Observability Patterns",
++    "kind": "book",
++    "owner_email": "user11@example.com"
++  },
++  {
++    "title": "Applied Security Guide",
++    "kind": "book",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Modern Security Handbook",
++    "kind": "book",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Practical Design Handbook",
++    "kind": "book",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Tripod #20",
++    "kind": "equipment",
++    "owner_email": "user66@example.com"
++  },
++  {
++    "title": "Field Networking Fundamentals",
++    "kind": "book",
++    "owner_email": "user07@example.com"
++  },
++  {
++    "title": "Projector #30",
++    "kind": "equipment",
++    "owner_email": "user43@example.com"
++  },
++  {
++    "title": "Applied Testing Primer",
++    "kind": "book",
++    "owner_email": "user47@example.com"
++  },
++  {
++    "title": "Portable monitor #7",
++    "kind": "equipment",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Illustrated Accessibility in Practice",
++    "kind": "book",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Modern Postgres Cookbook",
++    "kind": "book",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Pocket Python in Practice",
++    "kind": "book",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Modern Observability Patterns",
++    "kind": "book",
++    "owner_email": "user59@example.com"
++  },
++  {
++    "title": "Conference speaker #22",
++    "kind": "equipment",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "USB-C hub #38",
++    "kind": "equipment",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #30",
++    "kind": "equipment",
++    "owner_email": "user76@example.com"
++  },
++  {
++    "title": "Webcam #32",
++    "kind": "equipment",
++    "owner_email": "user01@example.com"
++  },
++  {
++    "title": "Practical Design Field Notes",
++    "kind": "book",
++    "owner_email": "user75@example.com"
++  },
++  {
++    "title": "Concise Kubernetes Cookbook",
++    "kind": "book",
++    "owner_email": "user17@example.com"
++  },
++  {
++    "title": "Applied Testing Fundamentals",
++    "kind": "book",
++    "owner_email": "user65@example.com"
++  },
++  {
++    "title": "Multimeter #39",
++    "kind": "equipment",
++    "owner_email": "user32@example.com"
++  },
++  {
++    "title": "Illustrated TypeScript Primer",
++    "kind": "book",
++    "owner_email": "user18@example.com"
++  },
++  {
++    "title": "Applied Statistics in Practice",
++    "kind": "book",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #36",
++    "kind": "equipment",
++    "owner_email": "user28@example.com"
++  },
++  {
++    "title": "Applied Statistics in Practice",
++    "kind": "book",
++    "owner_email": "user45@example.com"
++  },
++  {
++    "title": "Webcam #12",
++    "kind": "equipment",
++    "owner_email": "user65@example.com"
++  },
++  {
++    "title": "Illustrated Statistics Guide",
++    "kind": "book",
++    "owner_email": "user46@example.com"
++  },
++  {
++    "title": "Applied Testing Field Notes",
++    "kind": "book",
++    "owner_email": "user69@example.com"
++  },
++  {
++    "title": "Pocket Postgres Guide",
++    "kind": "book",
++    "owner_email": "user04@example.com"
++  },
++  {
++    "title": "Practical Accessibility Handbook",
++    "kind": "book",
++    "owner_email": "user26@example.com"
++  },
++  {
++    "title": "Essential TypeScript in Practice",
++    "kind": "book",
++    "owner_email": "user19@example.com"
++  },
++  {
++    "title": "Ergonomic keyboard #19",
++    "kind": "equipment",
++    "owner_email": "user27@example.com"
++  },
++  {
++    "title": "USB-C hub #23",
++    "kind": "equipment",
++    "owner_email": "user58@example.com"
++  },
++  {
++    "title": "Concise Terraform Field Notes",
++    "kind": "book",
++    "owner_email": "user31@example.com"
++  },
++  {
++    "title": "Complete Statistics Handbook",
++    "kind": "book",
++    "owner_email": "user49@example.com"
++  },
++  {
++    "title": "Illustrated Design Handbook",
++    "kind": "book",
++    "owner_email": "user02@example.com"
++  },
++  {
++    "title": "Conference speaker #40",
++    "kind": "equipment",
++    "owner_email": "user57@example.com"
++  },
++  {
++    "title": "Laser pointer #24",
++    "kind": "equipment",
++    "owner_email": "user76@example.com"
++  },
++  {
++    "title": "Applied Terraform Patterns",
++    "kind": "book",
++    "owner_email": "user38@example.com"
++  },
++  {
++    "title": "Modern Kubernetes Cookbook",
++    "kind": "book",
++    "owner_email": "user66@example.com"
++  },
++  {
++    "title": "Practical Observability in Practice",
++    "kind": "book",
++    "owner_email": "user72@example.com"
++  },
++  {
++    "title": "Essential Testing in Practice",
++    "kind": "book",
++    "owner_email": "user01@example.com"
++  },
++  {
++    "title": "Essential Postgres Cookbook",
++    "kind": "book",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "Applied Accessibility in Practice",
++    "kind": "book",
++    "owner_email": "user63@example.com"
++  },
++  {
++    "title": "Drawing tablet #23",
++    "kind": "equipment",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Soldering iron #34",
++    "kind": "equipment",
++    "owner_email": "user29@example.com"
++  },
++  {
++    "title": "Drawing tablet #5",
++    "kind": "equipment",
++    "owner_email": "user65@example.com"
++  },
++  {
++    "title": "Concise Design Field Notes",
++    "kind": "book",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Advanced Accessibility Fundamentals",
++    "kind": "book",
++    "owner_email": "user43@example.com"
++  },
++  {
++    "title": "Advanced Testing Primer",
++    "kind": "book",
++    "owner_email": "user72@example.com"
++  },
++  {
++    "title": "Ring light #1",
++    "kind": "equipment",
++    "owner_email": "user15@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #16",
++    "kind": "equipment",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Conference speaker #3",
++    "kind": "equipment",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "Modern Observability in Practice",
++    "kind": "book",
++    "owner_email": "user70@example.com"
++  },
++  {
++    "title": "USB-C hub #34",
++    "kind": "equipment",
++    "owner_email": "user48@example.com"
++  },
++  {
++    "title": "Concise Security Primer",
++    "kind": "book",
++    "owner_email": "user06@example.com"
++  },
++  {
++    "title": "Advanced Networking Guide",
++    "kind": "book",
++    "owner_email": "user13@example.com"
++  },
++  {
++    "title": "Concise Design Handbook",
++    "kind": "book",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Advanced Accessibility Field Notes",
++    "kind": "book",
++    "owner_email": "user14@example.com"
++  },
++  {
++    "title": "Pocket Accessibility Guide",
++    "kind": "book",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Illustrated Postgres Guide",
++    "kind": "book",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Complete Design Guide",
++    "kind": "book",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Laser pointer #17",
++    "kind": "equipment",
++    "owner_email": "user53@example.com"
++  },
++  {
++    "title": "Pocket Observability Fundamentals",
++    "kind": "book",
++    "owner_email": "user03@example.com"
++  },
++  {
++    "title": "Modern Design Handbook",
++    "kind": "book",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Applied Postgres Guide",
++    "kind": "book",
++    "owner_email": "user46@example.com"
++  },
++  {
++    "title": "Portable monitor #19",
++    "kind": "equipment",
++    "owner_email": "user39@example.com"
++  },
++  {
++    "title": "Label printer #29",
++    "kind": "equipment",
++    "owner_email": "user49@example.com"
++  },
++  {
++    "title": "Practical Security Cookbook",
++    "kind": "book",
++    "owner_email": "user69@example.com"
++  },
++  {
++    "title": "Pocket Design in Practice",
++    "kind": "book",
++    "owner_email": "user19@example.com"
++  },
++  {
++    "title": "Illustrated Postgres Cookbook",
++    "kind": "book",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Applied Testing Field Notes",
++    "kind": "book",
++    "owner_email": "user69@example.com"
++  },
++  {
++    "title": "Modern TypeScript Patterns",
++    "kind": "book",
++    "owner_email": "user45@example.com"
++  },
++  {
++    "title": "Concise Kubernetes Cookbook",
++    "kind": "book",
++    "owner_email": "user24@example.com"
++  },
++  {
++    "title": "Complete Terraform Guide",
++    "kind": "book",
++    "owner_email": "user24@example.com"
++  },
++  {
++    "title": "Tripod #4",
++    "kind": "equipment",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Concise Python in Practice",
++    "kind": "book",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Advanced Statistics Primer",
++    "kind": "book",
++    "owner_email": "user43@example.com"
++  },
++  {
++    "title": "Advanced Python in Practice",
++    "kind": "book",
++    "owner_email": "user80@example.com"
++  },
++  {
++    "title": "Advanced Networking Primer",
++    "kind": "book",
++    "owner_email": "user58@example.com"
++  },
++  {
++    "title": "Complete Statistics Cookbook",
++    "kind": "book",
++    "owner_email": "user73@example.com"
++  },
++  {
++    "title": "Illustrated Observability Cookbook",
++    "kind": "book",
++    "owner_email": "user01@example.com"
++  },
++  {
++    "title": "Advanced Statistics Field Notes",
++    "kind": "book",
++    "owner_email": "user36@example.com"
++  },
++  {
++    "title": "Webcam #22",
++    "kind": "equipment",
++    "owner_email": "user62@example.com"
++  },
++  {
++    "title": "Illustrated TypeScript Primer",
++    "kind": "book",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Applied Python in Practice",
++    "kind": "book",
++    "owner_email": "user18@example.com"
++  },
++  {
++    "title": "Conference speaker #17",
++    "kind": "equipment",
++    "owner_email": "user10@example.com"
++  },
++  {
++    "title": "Laser pointer #2",
++    "kind": "equipment",
++    "owner_email": "user65@example.com"
++  },
++  {
++    "title": "Projector #38",
++    "kind": "equipment",
++    "owner_email": "user75@example.com"
++  },
++  {
++    "title": "Applied Terraform Handbook",
++    "kind": "book",
++    "owner_email": "user71@example.com"
++  },
++  {
++    "title": "Concise Security Cookbook",
++    "kind": "book",
++    "owner_email": "user47@example.com"
++  },
++  {
++    "title": "Applied Statistics in Practice",
++    "kind": "book",
++    "owner_email": "user18@example.com"
++  },
++  {
++    "title": "Concise Python Field Notes",
++    "kind": "book",
++    "owner_email": "user47@example.com"
++  },
++  {
++    "title": "Advanced Testing Cookbook",
++    "kind": "book",
++    "owner_email": "user66@example.com"
++  },
++  {
++    "title": "Essential Kubernetes Cookbook",
++    "kind": "book",
++    "owner_email": "user62@example.com"
++  },
++  {
++    "title": "USB-C hub #15",
++    "kind": "equipment",
++    "owner_email": "user63@example.com"
++  },
++  {
++    "title": "Complete Networking Patterns",
++    "kind": "book",
++    "owner_email": "user06@example.com"
++  },
++  {
++    "title": "Drawing tablet #24",
++    "kind": "equipment",
++    "owner_email": "user50@example.com"
++  },
++  {
++    "title": "Field Postgres Handbook",
++    "kind": "book",
++    "owner_email": "user42@example.com"
++  },
++  {
++    "title": "Concise Accessibility in Practice",
++    "kind": "book",
++    "owner_email": "user34@example.com"
++  },
++  {
++    "title": "Applied Kubernetes Field Notes",
++    "kind": "book",
++    "owner_email": "user49@example.com"
++  },
++  {
++    "title": "Modern Design in Practice",
++    "kind": "book",
++    "owner_email": "user49@example.com"
++  },
++  {
++    "title": "Conference speaker #34",
++    "kind": "equipment",
++    "owner_email": "user52@example.com"
++  },
++  {
++    "title": "Illustrated Security Primer",
++    "kind": "book",
++    "owner_email": "user78@example.com"
++  },
++  {
++    "title": "Essential Security Cookbook",
++    "kind": "book",
++    "owner_email": "user30@example.com"
++  },
++  {
++    "title": "Complete Terraform Cookbook",
++    "kind": "book",
++    "owner_email": "user24@example.com"
++  },
++  {
++    "title": "Applied Statistics Guide",
++    "kind": "book",
++    "owner_email": "user30@example.com"
++  },
++  {
++    "title": "Illustrated Statistics Guide",
++    "kind": "book",
++    "owner_email": "user62@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #14",
++    "kind": "equipment",
++    "owner_email": "user76@example.com"
++  },
++  {
++    "title": "Pocket Postgres Patterns",
++    "kind": "book",
++    "owner_email": "user06@example.com"
++  },
++  {
++    "title": "Applied Kubernetes Cookbook",
++    "kind": "book",
++    "owner_email": "user66@example.com"
++  },
++  {
++    "title": "Applied Kubernetes Handbook",
++    "kind": "book",
++    "owner_email": "user22@example.com"
++  },
++  {
++    "title": "Essential Design Field Notes",
++    "kind": "book",
++    "owner_email": "user77@example.com"
++  },
++  {
++    "title": "Ring light #2",
++    "kind": "equipment",
++    "owner_email": "user37@example.com"
++  },
++  {
++    "title": "Conference speaker #29",
++    "kind": "equipment",
++    "owner_email": "user78@example.com"
++  },
++  {
++    "title": "Projector #31",
++    "kind": "equipment",
++    "owner_email": "user22@example.com"
++  },
++  {
++    "title": "Pocket Testing Cookbook",
++    "kind": "book",
++    "owner_email": "user75@example.com"
++  },
++  {
++    "title": "Webcam #40",
++    "kind": "equipment",
++    "owner_email": "user66@example.com"
++  },
++  {
++    "title": "Illustrated Security Guide",
++    "kind": "book",
++    "owner_email": "user30@example.com"
++  },
++  {
++    "title": "Essential Python Handbook",
++    "kind": "book",
++    "owner_email": "user26@example.com"
++  },
++  {
++    "title": "Concise Accessibility Field Notes",
++    "kind": "book",
++    "owner_email": "user20@example.com"
++  },
++  {
++    "title": "Webcam #31",
++    "kind": "equipment",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Concise Design Guide",
++    "kind": "book",
++    "owner_email": "user12@example.com"
++  },
++  {
++    "title": "Essential Testing Handbook",
++    "kind": "book",
++    "owner_email": "user56@example.com"
++  },
++  {
++    "title": "Illustrated Postgres Field Notes",
++    "kind": "book",
++    "owner_email": "user30@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #25",
++    "kind": "equipment",
++    "owner_email": "user45@example.com"
++  },
++  {
++    "title": "Applied Python Field Notes",
++    "kind": "book",
++    "owner_email": "user18@example.com"
++  },
++  {
++    "title": "Advanced Python in Practice",
++    "kind": "book",
++    "owner_email": "user77@example.com"
++  },
++  {
++    "title": "Multimeter #17",
++    "kind": "equipment",
++    "owner_email": "user25@example.com"
++  },
++  {
++    "title": "Practical Testing Guide",
++    "kind": "book",
++    "owner_email": "user67@example.com"
++  },
++  {
++    "title": "Advanced Statistics Fundamentals",
++    "kind": "book",
++    "owner_email": "user53@example.com"
++  },
++  {
++    "title": "Essential Observability in Practice",
++    "kind": "book",
++    "owner_email": "user34@example.com"
++  },
++  {
++    "title": "Multimeter #37",
++    "kind": "equipment",
++    "owner_email": "user47@example.com"
++  },
++  {
++    "title": "Ring light #26",
++    "kind": "equipment",
++    "owner_email": "user27@example.com"
++  },
++  {
++    "title": "Concise Security Cookbook",
++    "kind": "book",
++    "owner_email": "user48@example.com"
++  },
++  {
++    "title": "Field TypeScript in Practice",
++    "kind": "book",
++    "owner_email": "user74@example.com"
++  },
++  {
++    "title": "Pocket Statistics Cookbook",
++    "kind": "book",
++    "owner_email": "user16@example.com"
++  },
++  {
++    "title": "Raspberry Pi kit #11",
++    "kind": "equipment",
++    "owner_email": "user13@example.com"
++  },
++  {
++    "title": "Pocket Networking Handbook",
++    "kind": "book",
++    "owner_email": "user21@example.com"
++  },
++  {
++    "title": "Practical Python Cookbook",
++    "kind": "book",
++    "owner_email": "user61@example.com"
++  },
++  {
++    "title": "Multimeter #6",
++    "kind": "equipment",
++    "owner_email": "user09@example.com"
++  },
++  {
++    "title": "Illustrated Python Handbook",
++    "kind": "book",
++    "owner_email": "user50@example.com"
++  },
++  {
++    "title": "Multimeter #40",
++    "kind": "equipment",
++    "owner_email": "user67@example.com"
++  },
++  {
++    "title": "Applied Postgres Cookbook",
++    "kind": "book",
++    "owner_email": "user64@example.com"
++  },
++  {
++    "title": "Advanced Accessibility in Practice",
++    "kind": "book",
++    "owner_email": "user25@example.com"
++  },
++  {
++    "title": "Applied Design Patterns",
++    "kind": "book",
++    "owner_email": "user79@example.com"
++  },
++  {
++    "title": "Practical Networking Patterns",
++    "kind": "book",
++    "owner_email": "user01@example.com"
++  },
++  {
++    "title": "Portable monitor #18",
++    "kind": "equipment",
++    "owner_email": "user52@example.com"
++  }
++]
+diff --git a/api/app/seed.py b/api/app/seed.py
+new file mode 100644
+index 0000000..28e139f
+--- /dev/null
++++ b/api/app/seed.py
+@@ -0,0 +1,25 @@
++"""Loads demo items into a local or staging database. Never run against production.
++
++    DB_SECRET_ARN=... DB_HOST=... DB_NAME=... python -m app.seed
++"""
++
++import json
++from pathlib import Path
++
++from . import db
++
++SEED_FILE = Path(__file__).parent / "data" / "seed_items.json"
++
++
++def main() -> None:
++    items = json.loads(SEED_FILE.read_text())
++    with db.transaction() as cur:
++        cur.executemany(
++            "INSERT INTO items (title, kind, owner_email) VALUES (%s, %s, %s)",
++            [(i["title"], i["kind"], i["owner_email"]) for i in items],
++        )
++    print(f"Inserted {len(items)} items")
++
++
++if __name__ == "__main__":
++    main()

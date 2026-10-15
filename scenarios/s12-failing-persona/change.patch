@@ -1,0 +1,23 @@
+diff --git a/.github/review-personas.yml b/.github/review-personas.yml
+index 86cacf5..90eb3d9 100644
+--- a/.github/review-personas.yml
++++ b/.github/review-personas.yml
+@@ -6,3 +6,5 @@ exclude_sensitive: ["config/prod/*"]
+ personas:
+   dba:
+     extra_focus: "We run Postgres 16 on RDS and loans holds millions of rows. Flag migrations that take ACCESS EXCLUSIVE locks or rewrite large tables."
++  ui-developer:
++    model: anthropic.no-such-model-v0
+diff --git a/web/src/components/ItemList.tsx b/web/src/components/ItemList.tsx
+index 5a41794..65d618d 100644
+--- a/web/src/components/ItemList.tsx
++++ b/web/src/components/ItemList.tsx
+@@ -16,7 +16,7 @@ export function ItemList({ selectedId, onSelect }: Props) {
+ 
+   if (error) return <p role="alert">Couldn't load items: {error}</p>;
+   if (items === null) return <p aria-busy="true">Loading items…</p>;
+-  if (items.length === 0) return <p>No items yet.</p>;
++  if (items.length === 0) return <p>No items yet. Ask your team to list the first one.</p>;
+ 
+   return (
+     <nav aria-label="Items">
