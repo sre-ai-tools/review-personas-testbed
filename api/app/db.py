@@ -8,31 +8,51 @@ from functools import lru_cache
 from typing import Any
 
 import boto3
+import psycopg
 from psycopg import Cursor
 from psycopg.conninfo import make_conninfo
 from psycopg.rows import dict_row
-from psycopg_pool import ConnectionPool
+
+# A Lambda instance serves one request at a time, so it keeps one connection.
+_conn: psycopg.Connection | None = None
 
 
 @lru_cache(maxsize=1)
-def _pool() -> ConnectionPool:
+def _credentials() -> dict[str, str]:
     secret = boto3.client("secretsmanager").get_secret_value(SecretId=os.environ["DB_SECRET_ARN"])
-    creds = json.loads(secret["SecretString"])
-    conninfo = make_conninfo(
-        host=os.environ["DB_HOST"],
-        dbname=os.environ["DB_NAME"],
-        user=creds["username"],
-        password=creds["password"],
-        sslmode="require",
-        connect_timeout=5,
+    return json.loads(secret["SecretString"])
+
+
+def _connect() -> psycopg.Connection:
+    creds = _credentials()
+    return psycopg.connect(
+        make_conninfo(
+            host=os.environ["DB_HOST"],
+            dbname=os.environ["DB_NAME"],
+            user=creds["username"],
+            password=creds["password"],
+            sslmode="require",
+            connect_timeout=5,
+        )
     )
-    # One Lambda instance serves one request at a time, so a tiny pool is enough.
-    return ConnectionPool(conninfo, min_size=1, max_size=2, open=True)
+
+
+def _connection() -> psycopg.Connection:
+    global _conn
+    if _conn is None or _conn.closed or _conn.broken:
+        try:
+            _conn = _connect()
+        except psycopg.OperationalError:
+            # RDS rotates the managed secret; re-read it once in case the cached one is stale.
+            _credentials.cache_clear()
+            _conn = _connect()
+    return _conn
 
 
 @contextmanager
 def transaction() -> Iterator[Cursor[dict[str, Any]]]:
-    with _pool().connection() as conn, conn.transaction(), conn.cursor(row_factory=dict_row) as cur:
+    conn = _connection()
+    with conn.transaction(), conn.cursor(row_factory=dict_row) as cur:
         yield cur
 
 

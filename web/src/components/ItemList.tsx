@@ -4,15 +4,23 @@ import { api, type Item } from "../api";
 interface Props {
   selectedId: number | null;
   onSelect: (id: number) => void;
+  version: number;
 }
 
-export function ItemList({ selectedId, onSelect }: Props) {
+export function ItemList({ selectedId, onSelect, version }: Props) {
   const [items, setItems] = useState<Item[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    api.listItems().then(setItems, (e: Error) => setError(e.message));
-  }, []);
+    let ignore = false;
+    api.listItems().then(
+      (result) => !ignore && setItems(result),
+      (e: Error) => !ignore && setError(e.message),
+    );
+    return () => {
+      ignore = true;
+    };
+  }, [version]);
 
   if (error) return <p role="alert">Couldn't load items: {error}</p>;
   if (items === null) return <p aria-busy="true">Loading items…</p>;

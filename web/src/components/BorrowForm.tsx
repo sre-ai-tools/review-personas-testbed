@@ -13,6 +13,10 @@ export function BorrowForm({ itemId, onBorrowed }: Props) {
 
   async function submit(event: FormEvent) {
     event.preventDefault();
+    if (!Number.isInteger(days) || days < 1 || days > 60) {
+      setError("Choose between 1 and 60 days.");
+      return;
+    }
     setSubmitting(true);
     setError(null);
     try {

@@ -2,12 +2,24 @@ import { useEffect, useState } from "react";
 import { api, type Item } from "../api";
 import { BorrowForm } from "./BorrowForm";
 
-export function ItemDetail({ itemId }: { itemId: number }) {
+interface Props {
+  itemId: number;
+  onChanged: () => void;
+}
+
+export function ItemDetail({ itemId, onChanged }: Props) {
   const [item, setItem] = useState<Item | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    api.getItem(itemId).then(setItem, (e: Error) => setError(e.message));
+    let ignore = false;
+    api.getItem(itemId).then(
+      (result) => !ignore && setItem(result),
+      (e: Error) => !ignore && setError(e.message),
+    );
+    return () => {
+      ignore = true;
+    };
   }, [itemId]);
 
   if (error) return <p role="alert">Couldn't load this item: {error}</p>;
@@ -23,7 +35,13 @@ export function ItemDetail({ itemId }: { itemId: number }) {
         <dd>{item.owner_email}</dd>
       </dl>
       {item.available ? (
-        <BorrowForm itemId={item.id} onBorrowed={() => setItem({ ...item, available: false })} />
+        <BorrowForm
+          itemId={item.id}
+          onBorrowed={() => {
+            setItem({ ...item, available: false });
+            onChanged();
+          }}
+        />
       ) : (
         <p>This item is on loan.</p>
       )}

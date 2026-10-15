@@ -46,6 +46,9 @@ resource "aws_lambda_function" "api" {
   memory_size   = 512
   timeout       = 15
 
+  # Each instance holds one Postgres connection, so this caps connections to RDS.
+  reserved_concurrent_executions = var.api_max_concurrency
+
   source_code_hash = filebase64sha256(var.api_package_path)
 
   vpc_config {
@@ -117,6 +120,23 @@ resource "aws_apigatewayv2_stage" "default" {
     throttling_burst_limit = 100
     throttling_rate_limit  = 50
   }
+
+  access_log_settings {
+    destination_arn = aws_cloudwatch_log_group.api_access.arn
+    format = jsonencode({
+      requestId = "$context.requestId"
+      ip        = "$context.identity.sourceIp"
+      route     = "$context.routeKey"
+      status    = "$context.status"
+      latencyMs = "$context.responseLatency"
+      error     = "$context.integrationErrorMessage"
+    })
+  }
+}
+
+resource "aws_cloudwatch_log_group" "api_access" {
+  name              = "/aws/apigateway/shelf-${var.environment}"
+  retention_in_days = 30
 }
 
 resource "aws_lambda_permission" "apigw" {

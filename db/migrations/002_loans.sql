@@ -12,6 +12,7 @@ CREATE TABLE loans (
 
 -- At most one open loan per item; the API also checks this, but the database is the backstop.
 CREATE UNIQUE INDEX loans_one_open_per_item_idx ON loans (item_id) WHERE returned_at IS NULL;
+CREATE INDEX loans_item_id_idx ON loans (item_id);
 CREATE INDEX loans_borrower_email_idx ON loans (borrower_email);
 
 -- migrate:down

@@ -18,6 +18,17 @@ variable "db_instance_class" {
   default = "db.t4g.medium"
 }
 
+variable "api_max_concurrency" {
+  description = "Reserved Lambda concurrency; also the most Postgres connections the API can open"
+  type        = number
+  default     = 50
+}
+
+variable "alarm_email" {
+  description = "Where CloudWatch alarms are sent"
+  type        = string
+}
+
 variable "api_package_path" {
   description = "Path to the zipped API build produced by the deploy pipeline"
   type        = string
