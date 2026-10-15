@@ -196,11 +196,14 @@ def cmd_pin(args: argparse.Namespace) -> None:
         uses_ref = pin_branch(tool, sha)
         print(f"Pushed review-personas branch {uses_ref} (action at {sha[:7]}).")
 
-    text = (ROOT / WORKFLOW).read_text()
+    original = text = (ROOT / WORKFLOW).read_text()
     text, n_uses = CALLER_USES.subn(rf"\1@{uses_ref}", text)
     text, n_pin = PINNED.subn(rf"\g<1>{ref} ({sha[:7]})", text)
     if n_uses != 1 or n_pin != 1:
         raise ScriptError(f"{WORKFLOW} needs exactly one `# pinned:` comment and one review.yml `uses:` line")
+    if text == original:
+        print(f"Testbed already runs review-personas {ref} ({sha[:7]}) via review.yml@{uses_ref}.")
+        return
     (ROOT / WORKFLOW).write_text(text)
     sh("git", "commit", "--quiet", "-m", f"Pin review-personas {ref} ({sha[:7]})", "--", str(WORKFLOW))
     sh("git", "push", "--quiet", "origin", "main")
