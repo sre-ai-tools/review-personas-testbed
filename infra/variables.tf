@@ -44,3 +44,8 @@ variable "jwt_audience" {
   type    = list(string)
   default = ["shelf"]
 }
+
+variable "bastion_key_name" {
+  description = "EC2 key pair for the bastion host"
+  type        = string
+}
