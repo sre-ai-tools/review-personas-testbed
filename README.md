@@ -89,6 +89,19 @@ scripts/scenario.py local s2             # local branch with the patch applied; 
 
 Fill in the Local column, skipping `(CI)` items. Run `git status` to confirm nothing was written, then `git checkout main`.
 
+**Or run them all unattended**, with your Claude Code login and no Bedrock calls:
+
+```sh
+scripts/scenario.py local-run all              # or: local-run s2 s5 [--model sonnet]
+```
+
+For each scenario that isn't CI-only, `local-run`:
+- applies the patch on a local branch;
+- runs `claude -p "/prpanel:review --base main"` with the pinned review-personas version loaded through `--plugin-dir` (your installed `prpanel` is switched off for that session only);
+- checks that nothing was written in the testbed.
+
+The session can use only the tools the command needs. Outputs go to `results/<date>-<version>-local/`, for you to check against each `expect.md`. Set `CLAUDE_BIN` if `claude` isn't on your `PATH`.
+
 ### 5. Finish
 
 Fill in the finish time and any failures, with links to review-personas issues. Commit the record to `main`, then clean up:

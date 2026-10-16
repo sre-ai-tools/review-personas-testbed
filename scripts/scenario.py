@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import json
 import os
 import re
 import subprocess
@@ -323,6 +324,8 @@ def review_headless(plugin: Path, tmp: Path, model: str | None) -> tuple[int | s
     cmd = [
         CLAUDE, "-p", "/prpanel:review --base main",
         "--plugin-dir", str(plugin),
+        # Turn off a marketplace-installed prpanel for this session, so only the pinned one loads.
+        "--settings", json.dumps({"enabledPlugins": {"prpanel@review-personas": False}}),
         "--allowedTools", "Bash(command -v uvx)", "Bash(uvx --from:*)", "Agent",
         f"Read({tmp_rule})", f"Write({tmp_rule})",
     ]  # fmt: skip
@@ -330,7 +333,7 @@ def review_headless(plugin: Path, tmp: Path, model: str | None) -> tuple[int | s
         cmd += ["--model", model]
     try:
         proc = subprocess.run(
-            cmd, cwd=ROOT, env={**os.environ, "TMPDIR": str(tmp)},
+            cmd, cwd=ROOT, env={**os.environ, "TMPDIR": str(tmp)}, stdin=subprocess.DEVNULL,
             capture_output=True, text=True, timeout=LOCAL_TIMEOUT, check=False,
         )  # fmt: skip
     except subprocess.TimeoutExpired:
@@ -346,7 +349,8 @@ def cmd_local_run(args: argparse.Namespace) -> None:
     else:
         scenarios = [find(i) for i in args.ids]
         if ci_only := [s.label for s in scenarios if s.ci_only]:
-            raise ScriptError(f"{', '.join(ci_only)} are CI-only (RUN-4). Use `scenario.py run`.")
+            verb = "is" if len(ci_only) == 1 else "are"
+            raise ScriptError(f"{', '.join(ci_only)} {verb} CI-only (RUN-4). Use `scenario.py run`.")
 
     pin = pinned((ROOT / WORKFLOW).read_text())
     m = re.fullmatch(r"(\S+) \(([0-9a-f]{7,40})\)", pin or "")
