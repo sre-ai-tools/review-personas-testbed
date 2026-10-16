@@ -24,7 +24,7 @@ export function ItemList({ selectedId, onSelect, version }: Props) {
 
   if (error) return <p role="alert">Couldn't load items: {error}</p>;
   if (items === null) return <p aria-busy="true">Loading items…</p>;
-  if (items.length === 0) return <p>No items yet.</p>;
+  if (items.length === 0) return <p>No items yet. Ask your team to list the first one.</p>;
 
   return (
     <nav aria-label="Items">
