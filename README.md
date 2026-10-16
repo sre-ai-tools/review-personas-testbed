@@ -132,7 +132,7 @@ Trust policy. Only PR runs from this repo can assume it:
 }
 ```
 
-Permissions. Only the models the scenarios use: the default model, and S11's DBA model.
+Permissions. Only the models the scenarios use: the default model (`qwen.qwen3-32b-v1:0`), and S11's DBA model.
 
 ```json
 {
@@ -142,8 +142,7 @@ Permissions. Only the models the scenarios use: the default model, and S11's DBA
       "Effect": "Allow",
       "Action": "bedrock:InvokeModel",
       "Resource": [
-        "arn:aws:bedrock:*:<ACCOUNT_ID>:inference-profile/global.anthropic.claude-opus-5-5",
-        "arn:aws:bedrock:*::foundation-model/anthropic.claude-opus-5-5",
+        "arn:aws:bedrock:*::foundation-model/qwen.qwen3-32b-v1:0",
         "arn:aws:bedrock:*:<ACCOUNT_ID>:inference-profile/global.anthropic.claude-sonnet-5-5",
         "arn:aws:bedrock:*::foundation-model/anthropic.claude-sonnet-5-5"
       ]
