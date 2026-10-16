@@ -4,6 +4,7 @@
     scripts/scenario.py pin <ref> [--tool-repo PATH]    point the testbed at a review-personas version
     scripts/scenario.py run <id>... | all [--yes]      open (or reset) scenario PRs: calls Bedrock
     scripts/scenario.py local <id>                     scenario branch for /prpanel:review, not pushed
+    scripts/scenario.py local-run <id>... | all        run /prpanel:review headless: Claude login, no Bedrock
     scripts/scenario.py record <version>               write a results checklist for this run
     scripts/scenario.py clean [--pins]                 close scenario PRs and delete their branches
 
@@ -300,6 +301,110 @@ def cmd_local(args: argparse.Namespace) -> None:
     )
 
 
+# ---------------------------------------------------------------- local-run (T7 amendment)
+
+LOCAL_TIMEOUT = 600
+CLAUDE = os.environ.get("CLAUDE_BIN", "claude")
+
+
+@dataclass
+class LocalResult:
+    scenario: Scenario
+    exit_code: int | str
+    seconds: int
+    wrote: str
+    output: str
+
+
+def review_headless(plugin: Path, tmp: Path, model: str | None) -> tuple[int | str, str]:
+    """Runs /prpanel:review in Claude Code's print mode with only the tools the command needs."""
+    # prepare's prompt and reply files go under TMPDIR, so the session may read and write only there.
+    tmp_rule = f"//{str(tmp).lstrip('/')}/**"
+    cmd = [
+        CLAUDE, "-p", "/prpanel:review --base main",
+        "--plugin-dir", str(plugin),
+        "--allowedTools", "Bash(command -v uvx)", "Bash(uvx --from:*)", "Agent",
+        f"Read({tmp_rule})", f"Write({tmp_rule})",
+    ]  # fmt: skip
+    if model:
+        cmd += ["--model", model]
+    try:
+        proc = subprocess.run(
+            cmd, cwd=ROOT, env={**os.environ, "TMPDIR": str(tmp)},
+            capture_output=True, text=True, timeout=LOCAL_TIMEOUT, check=False,
+        )  # fmt: skip
+    except subprocess.TimeoutExpired:
+        return "timeout", f"Timed out after {LOCAL_TIMEOUT}s."
+    except FileNotFoundError:
+        raise ScriptError(f"`{CLAUDE}` not found. Install Claude Code or set CLAUDE_BIN.") from None
+    return proc.returncode, proc.stdout.strip() or proc.stderr.strip()
+
+
+def cmd_local_run(args: argparse.Namespace) -> None:
+    if args.ids == ["all"]:
+        scenarios = [s for s in all_scenarios() if not s.ci_only]
+    else:
+        scenarios = [find(i) for i in args.ids]
+        if ci_only := [s.label for s in scenarios if s.ci_only]:
+            raise ScriptError(f"{', '.join(ci_only)} are CI-only (RUN-4). Use `scenario.py run`.")
+
+    pin = pinned((ROOT / WORKFLOW).read_text())
+    m = re.fullmatch(r"(\S+) \(([0-9a-f]{7,40})\)", pin or "")
+    if not m:
+        raise ScriptError("The testbed isn't pinned to a review-personas version. Run `scenario.py pin <ref>` first.")
+    ref, short_sha = m.groups()
+    tool = Path(args.tool_repo).resolve()
+    sh("git", "fetch", "--quiet", "origin", cwd=tool)
+    sha = sh("git", "rev-parse", "--verify", f"{short_sha}^{{commit}}", cwd=tool)
+    require_clean_tree()
+
+    results: list[LocalResult] = []
+    with tempfile.TemporaryDirectory(prefix="scenario-local-") as work:
+        work_dir = Path(work).resolve()
+        plugin, tmp = work_dir / "plugin", work_dir / "tmp"
+        tmp.mkdir()
+        # The pinned version's plugin, loaded for these sessions only (no marketplace changes).
+        sh("git", "worktree", "add", "--quiet", "--detach", str(plugin), sha, cwd=tool)
+        try:
+            for s in scenarios:
+                print(f"{s.label}: {s.title}", flush=True)
+                sh("git", "checkout", "--quiet", "-B", s.branch, "main")
+                commit_patch(s.path / "change.patch", f"{s.label}: {s.title}")
+                started = time.monotonic()
+                code, output = review_headless(plugin, tmp, args.model)
+                seconds = round(time.monotonic() - started)
+                # RUN-5: the review must not write anything inside the testbed.
+                wrote = sh("git", "status", "--porcelain")
+                if wrote:
+                    sh("git", "reset", "--quiet", "--hard")
+                    sh("git", "clean", "--quiet", "-fd")
+                results.append(LocalResult(s, code, seconds, wrote, output))
+                print(f"  exit {code}, {seconds}s" + (" — WROTE FILES" if wrote else ""), flush=True)
+        finally:
+            sh("git", "checkout", "--quiet", "main")
+            sh("git", "worktree", "remove", "--force", str(plugin), cwd=tool)
+
+    # Saved only now, so the files never show up in a scenario's `git status` check.
+    safe = re.sub(r"[^A-Za-z0-9._-]+", "-", ref)
+    out_dir = RESULTS / f"{dt.date.today().isoformat()}-{safe}-local"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    print("\n| Scenario | Exit | Seconds | Wrote files | Output |\n|---|---|---|---|---|")
+    for r in results:
+        out = out_dir / f"{r.scenario.name}.md"
+        out.write_text(
+            f"# {r.scenario.label}: {r.scenario.title} (local, headless)\n\n"
+            f"- **Pinned:** {pin}\n"
+            f"- **Model:** {args.model or 'Claude Code default'}\n"
+            f"- **Exit code:** {r.exit_code}\n"
+            f"- **Seconds:** {r.seconds}\n"
+            f"- **Files written in the testbed:** {r.wrote or 'none'}\n\n"
+            f"Check against scenarios/{r.scenario.name}/expect.md, skipping (CI) items.\n\n"
+            f"---\n\n{r.output}\n"
+        )
+        wrote = "yes" if r.wrote else "no"
+        print(f"| {r.scenario.label} | {r.exit_code} | {r.seconds} | {wrote} | {out.relative_to(ROOT)} |")
+
+
 # ---------------------------------------------------------------- record (T8)
 
 TAG = re.compile(r"^\((CI|local)\)\s*", re.I)
@@ -395,6 +500,12 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("local", help="create a local scenario branch for /prpanel:review")
     p.add_argument("id")
     p.set_defaults(func=cmd_local)
+
+    p = sub.add_parser("local-run", help="run /prpanel:review headless on scenarios (no Bedrock)")
+    p.add_argument("ids", nargs="+", help="scenario ids, or `all`")
+    p.add_argument("--model", help="Claude Code model for the review (default: your Claude Code default)")
+    p.add_argument("--tool-repo", default=tool_default, help="local review-personas clone")
+    p.set_defaults(func=cmd_local_run)
 
     p = sub.add_parser("record", help="write a results checklist")
     p.add_argument("version", help="the review-personas version being verified")
