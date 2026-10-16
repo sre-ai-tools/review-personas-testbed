@@ -25,6 +25,10 @@ class LoanCreate(BaseModel):
     days: int = Field(default=14, ge=1, le=60)
 
 
+class LoanExtend(BaseModel):
+    days: int = Field(ge=1, le=30)
+
+
 class Loan(BaseModel):
     id: int
     item_id: int

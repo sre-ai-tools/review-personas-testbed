@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from .. import db
 from ..auth import current_email
 from ..fees import late_fee_cents
-from ..models import Loan, LoanCreate
+from ..models import Loan, LoanCreate, LoanExtend
 
 router = APIRouter(prefix="/loans", tags=["loans"])
 
@@ -47,6 +47,28 @@ def return_item(loan_id: int, email: Annotated[str, Depends(current_email)]) -> 
         cur.execute(
             "UPDATE loans SET returned_at = %s, late_fee_cents = %s WHERE id = %s RETURNING *",
             (now, late_fee_cents(loan["due_at"], now), loan_id),
+        )
+        return cur.fetchone()
+
+
+def _open_loan(cur, loan_id: int) -> dict | None:
+    cur.execute(
+        "SELECT * FROM loans WHERE id = %s AND returned_at IS NULL FOR UPDATE", (loan_id,)
+    )
+    return cur.fetchone()
+
+
+@router.post("/{loan_id}/extend", response_model=Loan)
+def extend(
+    loan_id: int, body: LoanExtend, email: Annotated[str, Depends(current_email)]
+) -> dict:
+    with db.transaction() as cur:
+        loan = _open_loan(cur, loan_id)
+        if loan["borrower_email"] != email:
+            raise HTTPException(status_code=403, detail="Only the borrower can extend this loan")
+        cur.execute(
+            "UPDATE loans SET due_at = %s WHERE id = %s RETURNING *",
+            (loan["due_at"] + timedelta(days=body.days), loan_id),
         )
         return cur.fetchone()
 
