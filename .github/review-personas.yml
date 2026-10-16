@@ -3,6 +3,6 @@
 # Never send production config to a model, in addition to the built-in deny list (used by S7).
 exclude_sensitive: ["config/prod/*"]
 
-personas:
+persnas:
   dba:
     extra_focus: "We run Postgres 16 on RDS and loans holds millions of rows. Flag migrations that take ACCESS EXCLUSIVE locks or rewrite large tables."
