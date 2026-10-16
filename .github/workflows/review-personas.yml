@@ -21,8 +21,13 @@ jobs:
       pull-requests: write
       id-token: write
     # Set by `scripts/scenario.py pin` (design T4). Do not edit by hand.
-    # pinned: main (4331a71)
-    uses: sre-ai-tools/review-personas/.github/workflows/review.yml@testbed/4331a71
+    # Tracking review-personas main directly for now; `pin <ref>` sets a fixed version again.
+    # pinned: main
+    uses: sre-ai-tools/review-personas/.github/workflows/review.yml@main
     with:
       aws-role-arn: ${{ vars.TESTBED_AWS_ROLE_ARN }}
       aws-region: ${{ vars.TESTBED_AWS_REGION || 'us-east-1' }}
+      # Optional overrides of .github/review-personas.yml. Leave the variables unset for scenario
+      # runs: S11 and S13 check the config's own persona and model settings.
+      personas: ${{ vars.TESTBED_PERSONAS || '' }}
+      model: ${{ vars.TESTBED_MODEL || 'qwen.qwen3-32b-v1:0' }}
