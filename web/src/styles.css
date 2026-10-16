@@ -70,3 +70,25 @@ input:focus-visible {
   color: var(--muted);
   font-size: 0.875rem;
 }
+
+.quick-picks {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.quick-pick {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: #f6f8fa;
+  color: #b0b7bf;
+  cursor: pointer;
+}
+
+.quick-pick.selected {
+  background: var(--accent);
+  color: #fff;
+}
+
+.error {
+  color: #d1242f;
+}

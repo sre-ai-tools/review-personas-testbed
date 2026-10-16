@@ -31,20 +31,26 @@ export function BorrowForm({ itemId, onBorrowed }: Props) {
 
   return (
     <form onSubmit={submit} className="borrow-form">
-      <label htmlFor="borrow-days">Borrow for (days)</label>
+      <div className="quick-picks">
+        {[7, 14, 28].map((d) => (
+          <div
+            key={d}
+            className={d === days ? "quick-pick selected" : "quick-pick"}
+            onClick={() => setDays(d)}
+          >
+            {d / 7} wk
+          </div>
+        ))}
+      </div>
       <input
-        id="borrow-days"
         type="number"
         min={1}
         max={60}
         value={days}
+        placeholder="Days"
         onChange={(e) => setDays(Number(e.target.value))}
-        aria-describedby="borrow-days-hint"
       />
-      <p id="borrow-days-hint" className="hint">
-        Up to 60 days. Late returns cost 50¢ a day.
-      </p>
-      {error && <p role="alert">{error}</p>}
+      {error && <p className="error">{error}</p>}
       <button type="submit" disabled={submitting}>
         {submitting ? "Borrowing…" : "Borrow"}
       </button>
