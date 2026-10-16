@@ -21,8 +21,8 @@ jobs:
       pull-requests: write
       id-token: write
     # Set by `scripts/scenario.py pin` (design T4). Do not edit by hand.
-    # pinned: feat/0001-persona-review (08c9352)
-    uses: sre-ai-tools/review-personas/.github/workflows/review.yml@testbed/08c9352
+    # pinned: feat/0001-persona-review (f6f14ff)
+    uses: sre-ai-tools/review-personas/.github/workflows/review.yml@testbed/f6f14ff
     with:
       aws-role-arn: ${{ vars.TESTBED_AWS_ROLE_ARN }}
       aws-region: ${{ vars.TESTBED_AWS_REGION || 'us-east-1' }}
