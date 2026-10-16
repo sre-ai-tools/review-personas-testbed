@@ -10,6 +10,14 @@ export interface Item {
   owner_email: string;
   available: boolean;
   created_at: string;
+  photo_url: string | null;
+}
+
+export type PhotoType = "image/jpeg" | "image/png" | "image/webp";
+
+export interface PhotoUpload {
+  url: string;
+  fields: Record<string, string>;
 }
 
 export interface Loan {
@@ -66,4 +74,18 @@ export const api = {
     request<Loan>("/loans", { method: "POST", body: JSON.stringify({ item_id: itemId, days }) }),
   returnItem: (loanId: number) => request<Loan>(`/loans/${loanId}/return`, { method: "POST" }),
   overdue: () => request<Loan[]>("/loans/overdue"),
+  requestPhotoUpload: (itemId: number, contentType: PhotoType) =>
+    request<PhotoUpload>(`/items/${itemId}/photo`, {
+      method: "POST",
+      body: JSON.stringify({ content_type: contentType }),
+    }),
 };
+
+// Sends the file straight to S3 with the presigned POST from the API.
+export async function uploadPhoto(upload: PhotoUpload, file: File): Promise<void> {
+  const form = new FormData();
+  Object.entries(upload.fields).forEach(([key, value]) => form.append(key, value));
+  form.append("file", file);
+  const res = await fetch(upload.url, { method: "POST", body: form });
+  if (!res.ok) throw new ApiError(res.status, "Upload failed");
+}
