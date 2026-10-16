@@ -5,7 +5,7 @@ from mangum import Mangum
 
 from .routes import items, loans
 
-app = FastAPI(title="Shelf API", version="1.4.0")
+app = FastAPI(title="Shelf API", version="1.4.1")
 app.include_router(items.router)
 app.include_router(loans.router)
 
