@@ -3,11 +3,12 @@
 from fastapi import FastAPI
 from mangum import Mangum
 
-from .routes import items, loans
+from .routes import fees, items, loans
 
 app = FastAPI(title="Shelf API", version="1.4.0")
 app.include_router(items.router)
 app.include_router(loans.router)
+app.include_router(fees.router)
 
 
 @app.get("/health")
