@@ -24,6 +24,12 @@ data "aws_iam_policy_document" "api" {
     actions   = ["secretsmanager:GetSecretValue"]
     resources = [aws_db_instance.main.master_user_secret[0].secret_arn]
   }
+
+  statement {
+    sid       = "ItemPhotos"
+    actions   = ["s3:PutObject", "s3:GetObject"]
+    resources = ["${aws_s3_bucket.photos.arn}/items/*"]
+  }
 }
 
 resource "aws_iam_role_policy" "api" {
@@ -61,6 +67,7 @@ resource "aws_lambda_function" "api" {
       DB_HOST       = aws_db_instance.main.address
       DB_NAME       = aws_db_instance.main.db_name
       DB_SECRET_ARN = aws_db_instance.main.master_user_secret[0].secret_arn
+      PHOTOS_BUCKET = aws_s3_bucket.photos.id
     }
   }
 

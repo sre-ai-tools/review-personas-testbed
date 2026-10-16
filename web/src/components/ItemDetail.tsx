@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { api, type Item } from "../api";
 import { BorrowForm } from "./BorrowForm";
+import { PhotoUploader } from "./PhotoUploader";
 
 interface Props {
   itemId: number;
@@ -28,6 +29,9 @@ export function ItemDetail({ itemId, onChanged }: Props) {
   return (
     <section aria-labelledby="item-title" className="item-detail">
       <h2 id="item-title">{item.title}</h2>
+      {item.photo_url && (
+        <img className="item-photo" src={item.photo_url} alt={`Photo of ${item.title}`} />
+      )}
       <dl>
         <dt>Type</dt>
         <dd>{item.kind === "book" ? "Book" : "Equipment"}</dd>
@@ -45,6 +49,7 @@ export function ItemDetail({ itemId, onChanged }: Props) {
       ) : (
         <p>This item is on loan.</p>
       )}
+      <PhotoUploader itemId={item.id} onUploaded={() => api.getItem(itemId).then(setItem)} />
     </section>
   );
 }

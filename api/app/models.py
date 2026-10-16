@@ -18,6 +18,7 @@ class Item(BaseModel):
     owner_email: str
     available: bool
     created_at: datetime
+    photo_url: str | None = None
 
 
 class LoanCreate(BaseModel):
@@ -33,3 +34,14 @@ class Loan(BaseModel):
     due_at: datetime
     returned_at: datetime | None
     late_fee_cents: int | None
+
+
+class PhotoUploadRequest(BaseModel):
+    content_type: Literal["image/jpeg", "image/png", "image/webp"]
+
+
+class PhotoUpload(BaseModel):
+    """A presigned S3 POST: the browser sends `fields` plus the file to `url`."""
+
+    url: str
+    fields: dict[str, str]
